@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0,
-      maximum-scale=1.0,user-scalable=no">
+      maximum-scale=1.0, user-scalable=no">
 
 <meta name="theme-color" content="#080609">
 
 <title>For My Princess ❤️</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 * {
     margin: 0;
@@ -30,7 +35,7 @@ body {
 body {
     background:
         radial-gradient(
-            circle at center,
+            circle at 50% 35%,
             #351624 0%,
             #120910 50%,
             #030303 100%
@@ -39,23 +44,20 @@ body {
     color: white;
 
     font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
         Arial,
+        Helvetica,
         sans-serif;
 
     overflow: hidden;
 }
 
 
-/* ================================
+/* =========================
    SCREENS
-================================ */
+========================= */
 
 .screen {
     position: fixed;
-
     inset: 0;
 
     width: 100%;
@@ -69,19 +71,17 @@ body {
     padding: 25px 20px;
 
     overflow-y: auto;
+    overflow-x: hidden;
 
     text-align: center;
 }
 
 .screen.active {
     display: flex;
-
-    animation:
-        fadeIn 0.7s ease;
+    animation: fadeIn 0.6s ease;
 }
 
 @keyframes fadeIn {
-
     from {
         opacity: 0;
         transform: translateY(15px);
@@ -94,29 +94,28 @@ body {
 }
 
 
-/* ================================
+/* =========================
    CONTENT
-================================ */
+========================= */
 
 .content {
     width: 100%;
     max-width: 430px;
-
     margin: auto;
 }
 
 
-/* ================================
+/* =========================
    HEART
-================================ */
+========================= */
 
 .big-heart {
     font-size: 70px;
+    line-height: 1;
 
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 
-    animation:
-        heartbeat 1.2s infinite;
+    animation: heartbeat 1.2s infinite;
 }
 
 @keyframes heartbeat {
@@ -127,48 +126,42 @@ body {
     }
 
     50% {
-        transform: scale(1.15);
+        transform: scale(1.14);
     }
 }
 
 
-/* ================================
+/* =========================
    TEXT
-================================ */
+========================= */
 
 h1 {
-    font-size: 38px;
-
+    font-size: clamp(31px, 9vw, 40px);
     line-height: 1.2;
-
-    margin-bottom: 16px;
+    margin-bottom: 17px;
 }
 
 h2 {
-    font-size: 27px;
-
+    font-size: clamp(24px, 7vw, 30px);
     line-height: 1.3;
-
-    margin-bottom: 16px;
+    margin-bottom: 17px;
 }
 
 p {
     font-size: 17px;
-
     line-height: 1.7;
-
     color: #e5e5e5;
 }
 
 
-/* ================================
+/* =========================
    BUTTON
-================================ */
+========================= */
 
 .button {
     border: none;
 
-    min-height: 50px;
+    min-height: 52px;
 
     padding: 14px 25px;
 
@@ -193,9 +186,12 @@ p {
 
     box-shadow:
         0 8px 28px
-        rgba(255,63,121,0.35);
+        rgba(255, 63, 121, 0.35);
 
     touch-action: manipulation;
+
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .button:active {
@@ -203,28 +199,27 @@ p {
 }
 
 
-/* ================================
+/* =========================
    TYPING
-================================ */
+========================= */
 
 .typing {
-    min-height: 130px;
+    min-height: 135px;
 
     font-size: 17px;
 
     line-height: 1.7;
 
-    color: #eee;
+    color: #eeeeee;
 }
 
 
-/* ================================
+/* =========================
    VIDEO
-================================ */
+========================= */
 
 .video-box {
     width: 100%;
-
     margin-top: 10px;
 }
 
@@ -232,12 +227,13 @@ video {
     display: block;
 
     width: 100%;
+    height: auto;
 
     max-height: 55vh;
 
     object-fit: contain;
 
-    background: black;
+    background: #000;
 
     border-radius: 18px;
 
@@ -255,16 +251,14 @@ video {
 }
 
 
-/* ================================
-   YES / NO GAME
-================================ */
+/* =========================
+   YES / NO
+========================= */
 
 .choice-area {
-
     position: relative;
 
     width: 100%;
-
     max-width: 340px;
 
     height: 190px;
@@ -273,7 +267,6 @@ video {
 }
 
 #yesButton {
-
     position: absolute;
 
     left: 50%;
@@ -288,7 +281,6 @@ video {
 }
 
 #noButton {
-
     position: absolute;
 
     left: 50%;
@@ -310,21 +302,19 @@ video {
 }
 
 .no-message {
+    margin-top: 5px;
 
     font-size: 14px;
 
     color: #aaa;
-
-    margin-top: 5px;
 }
 
 
-/* ================================
+/* =========================
    LETTER
-================================ */
+========================= */
 
 .letter {
-
     background:
         linear-gradient(
             145deg,
@@ -345,22 +335,20 @@ video {
         rgba(0,0,0,0.4);
 
     animation:
-        letterAppear 0.9s ease;
+        letterAppear 0.8s ease;
 }
 
 @keyframes letterAppear {
 
     from {
         opacity: 0;
-
         transform:
             scale(0.9)
-            rotateX(20deg);
+            rotateX(15deg);
     }
 
     to {
         opacity: 1;
-
         transform:
             scale(1)
             rotateX(0);
@@ -368,7 +356,6 @@ video {
 }
 
 .letter-title {
-
     text-align: center;
 
     font-size: 23px;
@@ -381,7 +368,6 @@ video {
 }
 
 .letter-text {
-
     white-space: pre-line;
 
     font-size: 16px;
@@ -394,9 +380,9 @@ video {
 }
 
 
-/* ================================
+/* =========================
    COUNTDOWN
-================================ */
+========================= */
 
 .countdown {
     font-size: 100px;
@@ -405,8 +391,9 @@ video {
 
     color: #ff719b;
 
-    animation:
-        pop 0.8s ease;
+    margin-top: 20px;
+
+    animation: pop 0.8s ease;
 }
 
 @keyframes pop {
@@ -423,12 +410,11 @@ video {
 }
 
 
-/* ================================
+/* =========================
    FINAL
-================================ */
+========================= */
 
 .final-screen {
-
     background:
         radial-gradient(
             circle,
@@ -439,7 +425,6 @@ video {
 }
 
 .final-small {
-
     font-size: 19px;
 
     margin-top: 15px;
@@ -449,9 +434,8 @@ video {
 }
 
 .final-big {
-
     font-size:
-        clamp(35px,10vw,52px);
+        clamp(35px, 10vw, 52px);
 
     color: #ff8eae;
 
@@ -466,7 +450,6 @@ video {
 }
 
 .final-love {
-
     font-size: 24px;
 
     margin-top: 20px;
@@ -483,26 +466,21 @@ video {
 
     from {
         opacity: 0;
-
-        transform:
-            translateY(20px);
+        transform: translateY(20px);
     }
 
     to {
         opacity: 1;
-
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 }
 
 
-/* ================================
+/* =========================
    FLOATING HEARTS
-================================ */
+========================= */
 
 .floating-heart {
-
     position: fixed;
 
     bottom: -40px;
@@ -518,9 +496,7 @@ video {
 @keyframes floatUp {
 
     0% {
-        transform:
-            translateY(0);
-
+        transform: translateY(0);
         opacity: 0;
     }
 
@@ -538,15 +514,15 @@ video {
 }
 
 
-/* ================================
-   SMALL PHONES
-================================ */
+/* =========================
+   SMALL PHONE
+========================= */
 
 @media (max-height: 700px) {
 
     .big-heart {
         font-size: 55px;
-        margin-bottom: 14px;
+        margin-bottom: 15px;
     }
 
     .button {
@@ -570,13 +546,11 @@ video {
 <body>
 
 
-<!-- =================================
-     1 — QR LANDING
-================================= -->
+<!-- =========================================
+     SCREEN 1
+========================================= -->
 
-<section
-    id="screen1"
-    class="screen active">
+<section id="screen1" class="screen active">
 
     <div class="content">
 
@@ -593,8 +567,8 @@ video {
         </p>
 
         <button
-            class="button"
-            onclick="goTo(2)">
+            id="openSecret"
+            class="button">
 
             Open my little secret ❤️
 
@@ -606,13 +580,11 @@ video {
 
 
 
-<!-- =================================
-     2 — INTRO
-================================= -->
+<!-- =========================================
+     SCREEN 2
+========================================= -->
 
-<section
-    id="screen2"
-    class="screen">
+<section id="screen2" class="screen">
 
     <div class="content">
 
@@ -632,8 +604,7 @@ video {
         <button
             id="introButton"
             class="button"
-            style="display:none"
-            onclick="goTo(3)">
+            style="display:none">
 
             I want to see it ❤️
 
@@ -645,13 +616,11 @@ video {
 
 
 
-<!-- =================================
-     3 — BEFORE VIDEO
-================================= -->
+<!-- =========================================
+     SCREEN 3
+========================================= -->
 
-<section
-    id="screen3"
-    class="screen">
+<section id="screen3" class="screen">
 
     <div class="content">
 
@@ -675,8 +644,8 @@ video {
         </p>
 
         <button
-            class="button"
-            onclick="openVideo1()">
+            id="watchFirst"
+            class="button">
 
             Watch what I made for you 🎬
 
@@ -688,13 +657,11 @@ video {
 
 
 
-<!-- =================================
-     4 — VIDEO 1
-================================= -->
+<!-- =========================================
+     SCREEN 4 — VIDEO 1
+========================================= -->
 
-<section
-    id="screen4"
-    class="screen">
+<section id="screen4" class="screen">
 
     <div class="content">
 
@@ -723,8 +690,8 @@ video {
         </div>
 
         <button
-            class="button"
-            onclick="goToQuestion()">
+            id="questionButton"
+            class="button">
 
             I have something to ask you ❤️
 
@@ -736,13 +703,11 @@ video {
 
 
 
-<!-- =================================
-     5 — YES / NO
-================================= -->
+<!-- =========================================
+     SCREEN 5 — YES / NO
+========================================= -->
 
-<section
-    id="screen5"
-    class="screen">
+<section id="screen5" class="screen">
 
     <div class="content">
 
@@ -764,8 +729,7 @@ video {
 
             <button
                 id="yesButton"
-                class="button"
-                onclick="sayYes()">
+                class="button">
 
                 YES ❤️
 
@@ -773,8 +737,7 @@ video {
 
             <button
                 id="noButton"
-                class="button"
-                onclick="moveNo()">
+                class="button">
 
                 NO 😭
 
@@ -796,13 +759,11 @@ video {
 
 
 
-<!-- =================================
-     6 — PERSONAL LETTER
-================================= -->
+<!-- =========================================
+     SCREEN 6 — LETTER
+========================================= -->
 
-<section
-    id="screen6"
-    class="screen">
+<section id="screen6" class="screen">
 
     <div class="content">
 
@@ -833,8 +794,8 @@ Can't think of anyone else who is so responsible and u make me feel inspired
         </div>
 
         <button
-            class="button"
-            onclick="startCountdown()">
+            id="oneMoreButton"
+            class="button">
 
             I have one more thing ❤️
 
@@ -846,13 +807,11 @@ Can't think of anyone else who is so responsible and u make me feel inspired
 
 
 
-<!-- =================================
-     7 — COUNTDOWN
-================================= -->
+<!-- =========================================
+     SCREEN 7 — COUNTDOWN
+========================================= -->
 
-<section
-    id="screen7"
-    class="screen">
+<section id="screen7" class="screen">
 
     <div class="content">
 
@@ -882,13 +841,11 @@ Can't think of anyone else who is so responsible and u make me feel inspired
 
 
 
-<!-- =================================
-     8 — VIDEO 2
-================================= -->
+<!-- =========================================
+     SCREEN 8 — VIDEO 2
+========================================= -->
 
-<section
-    id="screen8"
-    class="screen">
+<section id="screen8" class="screen">
 
     <div class="content">
 
@@ -917,8 +874,8 @@ Can't think of anyone else who is so responsible and u make me feel inspired
         </div>
 
         <button
-            class="button"
-            onclick="openVideo3()">
+            id="video3Button"
+            class="button">
 
             One last thing 🥺
 
@@ -930,13 +887,11 @@ Can't think of anyone else who is so responsible and u make me feel inspired
 
 
 
-<!-- =================================
-     9 — VIDEO 3
-================================= -->
+<!-- =========================================
+     SCREEN 9 — VIDEO 3
+========================================= -->
 
-<section
-    id="screen9"
-    class="screen">
+<section id="screen9" class="screen">
 
     <div class="content">
 
@@ -965,8 +920,8 @@ Can't think of anyone else who is so responsible and u make me feel inspired
         </div>
 
         <button
-            class="button"
-            onclick="showFinal()">
+            id="finalButton"
+            class="button">
 
             Stay for the last part ❤️
 
@@ -978,9 +933,9 @@ Can't think of anyone else who is so responsible and u make me feel inspired
 
 
 
-<!-- =================================
-     10 — FINAL
-================================= -->
+<!-- =========================================
+     SCREEN 10 — FINAL
+========================================= -->
 
 <section
     id="screen10"
@@ -1012,425 +967,288 @@ Can't think of anyone else who is so responsible and u make me feel inspired
 
 <script>
 
-/* =================================
-   SCREEN NAVIGATION
-================================= */
-
-function goTo(number) {
-
-    document
-        .querySelectorAll(".screen")
-        .forEach(function(screen) {
-
-            screen.classList.remove("active");
-
-        });
-
-
-    const target =
-        document.getElementById(
-            "screen" + number
-        );
-
-
-    if (!target) {
-        return;
-    }
-
-
-    target.classList.add("active");
-
-
-    target.scrollTop = 0;
-
-
-    /*
-       Stop videos that aren't
-       on the current screen.
-    */
-
-    document
-        .querySelectorAll("video")
-        .forEach(function(video) {
-
-            if (!target.contains(video)) {
-
-                video.pause();
-
-            }
-
-        });
-
-
-    if (number === 2) {
-
-        startTyping();
-
-    }
-
-}
-
-
-/* =================================
-   INTRO TYPING
-================================= */
-
-const message =
-"I know I messed up and I know things aren't okay right now... I don't expect a few words to magically fix everything. I just want you to know that I'm genuinely sorry and I really want to make things right with you.";
-
-
-let typingDone = false;
-
-
-function startTyping() {
-
-    if (typingDone) {
-        return;
-    }
-
-
-    typingDone = true;
-
-
-    const output =
-        document.getElementById(
-            "typing"
-        );
-
-
-    const button =
-        document.getElementById(
-            "introButton"
-        );
-
-
-    let position = 0;
-
-
-    function type() {
-
-        if (position < message.length) {
-
-            output.textContent +=
-                message[position];
-
-            position++;
-
-
-            setTimeout(
-                type,
-                30
-            );
-
-        } else {
-
-            button.style.display =
-                "inline-block";
-
-        }
-
-    }
-
-
-    type();
-
-}
-
-
-/* =================================
-   VIDEO 1
-================================= */
-
-function openVideo1() {
-
-    goTo(4);
-
-
-    const video =
-        document.getElementById(
-            "video1"
-        );
-
-
-    video.currentTime = 0;
-
-
-    video.play().catch(
-        function() {}
-    );
-
-}
-
-
-/* =================================
-   VIDEO 1 → QUESTION
-================================= */
-
-function goToQuestion() {
-
-    const video =
-        document.getElementById(
-            "video1"
-        );
-
-
-    video.pause();
-
-
-    resetNo();
-
-
-    goTo(5);
-
-}
-
-
 /*
-   If Video 1 finishes,
-   automatically show YES/NO.
+==================================================
+IMPORTANT
+Everything below runs after the page has loaded.
+No inline onclick functions are used.
+==================================================
 */
 
-document
-    .getElementById("video1")
-    .addEventListener(
-        "ended",
-        function() {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-            goToQuestion();
+
+        /* =========================================
+           GET ELEMENTS
+        ========================================= */
+
+        const screens =
+            document.querySelectorAll(".screen");
+
+        const openSecret =
+            document.getElementById(
+                "openSecret"
+            );
+
+        const introButton =
+            document.getElementById(
+                "introButton"
+            );
+
+        const watchFirst =
+            document.getElementById(
+                "watchFirst"
+            );
+
+        const questionButton =
+            document.getElementById(
+                "questionButton"
+            );
+
+        const yesButton =
+            document.getElementById(
+                "yesButton"
+            );
+
+        const noButton =
+            document.getElementById(
+                "noButton"
+            );
+
+        const oneMoreButton =
+            document.getElementById(
+                "oneMoreButton"
+            );
+
+        const video3Button =
+            document.getElementById(
+                "video3Button"
+            );
+
+        const finalButton =
+            document.getElementById(
+                "finalButton"
+            );
+
+
+        const video1 =
+            document.getElementById(
+                "video1"
+            );
+
+        const video2 =
+            document.getElementById(
+                "video2"
+            );
+
+        const video3 =
+            document.getElementById(
+                "video3"
+            );
+
+
+        /* =========================================
+           SCREEN FUNCTION
+        ========================================= */
+
+        function showScreen(number) {
+
+            screens.forEach(
+                function(screen) {
+
+                    screen.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            const target =
+                document.getElementById(
+                    "screen" + number
+                );
+
+
+            if (!target) {
+                return;
+            }
+
+
+            target.classList.add(
+                "active"
+            );
+
+
+            target.scrollTop = 0;
+
+
+            /*
+               Stop all videos except
+               the video on current screen.
+            */
+
+            document
+                .querySelectorAll("video")
+                .forEach(
+                    function(video) {
+
+                        if (
+                            !target.contains(
+                                video
+                            )
+                        ) {
+
+                            video.pause();
+
+                        }
+
+                    }
+                );
 
         }
-    );
 
 
-/* =================================
-   YES
-================================= */
+        /* =========================================
+           FIRST BUTTON
+        ========================================= */
 
-function sayYes() {
-
-    resetNo();
-
-    goTo(6);
-
-}
-
-
-/* =================================
-   NO BUTTON
-================================= */
-
-let noCount = 0;
-
-
-function moveNo() {
-
-    const button =
-        document.getElementById(
-            "noButton"
-        );
-
-
-    const area =
-        document.getElementById(
-            "choiceArea"
-        );
-
-
-    const message =
-        document.getElementById(
-            "noMessage"
-        );
-
-
-    noCount++;
-
-
-    if (noCount === 1) {
-
-        message.textContent =
-            "Are you sure? 🥺";
-
-    }
-
-    else if (noCount === 2) {
-
-        message.textContent =
-            "Princess please 😭❤️";
-
-    }
-
-    else if (noCount === 3) {
-
-        message.textContent =
-            "Really?? 😭";
-
-    }
-
-    else {
-
-        message.textContent =
-            "I won't give up that easily ❤️";
-
-    }
-
-
-    const areaWidth =
-        area.clientWidth;
-
-    const areaHeight =
-        area.clientHeight;
-
-    const buttonWidth =
-        button.offsetWidth;
-
-    const buttonHeight =
-        button.offsetHeight;
-
-
-    /*
-       Small movement only.
-    */
-
-    const rangeX = 85;
-
-    const rangeY = 60;
-
-
-    let x =
-        (areaWidth / 2)
-        - (buttonWidth / 2)
-        + (
-            Math.random()
-            * rangeX
-            * 2
-        )
-        - rangeX;
-
-
-    let y =
-        (areaHeight / 2)
-        - (buttonHeight / 2)
-        + (
-            Math.random()
-            * rangeY
-            * 2
-        )
-        - rangeY;
-
-
-    const margin = 5;
-
-
-    x =
-        Math.max(
-            margin,
-            Math.min(
-                x,
-                areaWidth -
-                buttonWidth -
-                margin
-            )
-        );
-
-
-    y =
-        Math.max(
-            margin,
-            Math.min(
-                y,
-                areaHeight -
-                buttonHeight -
-                margin
-            )
-        );
-
-
-    button.style.left =
-        x + "px";
-
-    button.style.top =
-        y + "px";
-
-    button.style.transform =
-        "none";
-
-}
-
-
-/* =================================
-   RESET NO
-================================= */
-
-function resetNo() {
-
-    const button =
-        document.getElementById(
-            "noButton"
-        );
-
-
-    button.style.left =
-        "50%";
-
-    button.style.top =
-        "50%";
-
-    button.style.transform =
-        "translate(10%, -50%)";
-
-
-    noCount = 0;
-
-
-    document
-        .getElementById(
-            "noMessage"
-        )
-        .textContent =
-        "Please don't press no 😭";
-
-}
-
-
-/* =================================
-   COUNTDOWN
-================================= */
-
-function startCountdown() {
-
-    goTo(7);
-
-
-    let number = 3;
-
-
-    const display =
-        document.getElementById(
-            "countdown"
-        );
-
-
-    display.textContent =
-        number;
-
-
-    const timer =
-        setInterval(
+        openSecret.addEventListener(
+            "click",
             function() {
 
-                number--;
+                showScreen(2);
+
+                startTyping();
+
+            }
+        );
 
 
-                if (number > 0) {
+        /* =========================================
+           TYPING
+        ========================================= */
 
-                    display.textContent =
-                        number;
+        const message =
+            "I know I messed up and I know things aren't okay right now... I don't expect a few words to magically fix everything. I just want you to know that I'm genuinely sorry and I really want to make things right with you.";
+
+
+        let typingStarted = false;
+
+
+        function startTyping() {
+
+            if (typingStarted) {
+                return;
+            }
+
+
+            typingStarted = true;
+
+
+            const output =
+                document.getElementById(
+                    "typing"
+                );
+
+
+            let position = 0;
+
+
+            function typeLetter() {
+
+                if (
+                    position <
+                    message.length
+                ) {
+
+                    output.textContent +=
+                        message.charAt(
+                            position
+                        );
+
+                    position++;
+
+
+                    setTimeout(
+                        typeLetter,
+                        28
+                    );
 
                 }
 
                 else {
 
-                    clearInterval(timer);
+                    introButton.style.display =
+                        "inline-block";
 
-                    display.textContent =
-                          
+                }
+
+            }
+
+
+            typeLetter();
+
+        }
+
+
+        /* =========================================
+           INTRO → SCREEN 3
+        ========================================= */
+
+        introButton.addEventListener(
+            "click",
+            function() {
+
+                showScreen(3);
+
+            }
+        );
+
+
+        /* =========================================
+           SCREEN 3 → VIDEO 1
+        ========================================= */
+
+        watchFirst.addEventListener(
+            "click",
+            function() {
+
+                showScreen(4);
+
+                video1.currentTime = 0;
+
+                video1.play().catch(
+                    function() {
+
+                        /*
+                           If autoplay is blocked,
+                           the video controls remain
+                           available.
+                        */
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           VIDEO 1 → QUESTION BUTTON
+        ========================================= */
+
+        questionButton.addEventListener(
+            "click",
+            function() {
+
+                video1.pause();
+
+                resetNoButton();
+
+                showScreen(5);
+
+            }
+      
