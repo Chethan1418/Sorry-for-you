@@ -3,262 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="theme-color" content="#080609">
 <title>For My Princess ❤️</title>
-
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    -webkit-tap-highlight-color:transparent;
-}
-
-body{
-    min-height:100vh;
-    background:radial-gradient(circle,#351624,#120910 55%,#030303);
-    color:white;
-    font-family:Arial,sans-serif;
-    overflow:hidden;
-}
-
-.screen{
-    position:fixed;
-    inset:0;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:25px 20px;
-    text-align:center;
-    overflow-y:auto;
-}
-
-.screen.active{
-    display:flex;
-    animation:fade .6s ease;
-}
-
-@keyframes fade{
-    from{opacity:0;transform:translateY(15px)}
-    to{opacity:1;transform:translateY(0)}
-}
-
-.content{
-    width:100%;
-    max-width:430px;
-    margin:auto;
-}
-
-.heart{
-    font-size:70px;
-    margin-bottom:22px;
-    animation:pulse 1.2s infinite;
-}
-
-@keyframes pulse{
-    50%{transform:scale(1.15)}
-}
-
-h1{
-    font-size:38px;
-    line-height:1.2;
-    margin-bottom:18px;
-}
-
-h2{
-    font-size:28px;
-    margin-bottom:18px;
-}
-
-p{
-    font-size:17px;
-    line-height:1.7;
-    color:#eee;
-}
-
-button{
-    border:0;
-    padding:14px 25px;
-    min-height:52px;
-    margin-top:24px;
-    border-radius:50px;
-    background:linear-gradient(135deg,#ff3f79,#ff719b);
-    color:white;
-    font-size:16px;
-    font-weight:bold;
-    box-shadow:0 8px 28px rgba(255,63,121,.35);
-    cursor:pointer;
-}
-
-video{
-    width:100%;
-    max-height:55vh;
-    display:block;
-    background:#000;
-    border-radius:18px;
-    margin-top:10px;
-}
-
-.typing{
-    min-height:130px;
-    font-size:17px;
-    line-height:1.7;
-    color:#eee;
-}
-
-.choice{
-    position:relative;
-    height:190px;
-    max-width:340px;
-    margin:auto;
-}
-
-#yes{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-110%,-50%);
-    margin:0;
-}
-
-#no{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(10%,-50%);
-    margin:0;
-    background:#444;
-    box-shadow:none;
-}
-
-.letter{
-    background:linear-gradient(145deg,#fff5f7,#f6dce3);
-    color:#35151f;
-    border-radius:18px;
-    padding:25px 22px;
-    text-align:left;
-}
-
-.letter h3{
-    text-align:center;
-    color:#9b3153;
-    font-size:23px;
-    margin-bottom:18px;
-}
-
-.letter p{
-    color:#35151f;
-    white-space:pre-line;
-    font-size:16px;
-    line-height:1.8;
-}
-
-.count{
-    font-size:100px;
-    color:#ff719b;
-    font-weight:bold;
-}
-
-.final{
-    background:radial-gradient(circle,#361421,#080407 65%,#000);
-}
-
-.final1{
-    font-size:20px;
-}
-
-.final2{
-    font-size:48px;
-    color:#ff8eae;
-    margin-top:20px;
-}
-
-.final3{
-    font-size:25px;
-    margin-top:20px;
-}
-
-@media(max-height:700px){
-    .heart{font-size:55px}
-    video{max-height:45vh}
-}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{width:100%;height:100%}
+body{background:radial-gradient(circle at 50% 35%,#351624 0%,#120910 55%,#030303 100%);color:#fff;font-family:Arial,Helvetica,sans-serif;overflow:hidden}
+.screen{position:fixed;inset:0;width:100%;height:100%;display:none;align-items:center;justify-content:center;padding:25px 20px;text-align:center;overflow-y:auto}
+.screen.active{display:flex;animation:fade .5s ease}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.content{width:100%;max-width:430px;margin:auto}
+.heart{font-size:68px;line-height:1;margin-bottom:22px;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+h1{font-size:38px;line-height:1.2;margin-bottom:18px}
+h2{font-size:28px;line-height:1.3;margin-bottom:18px}
+p{font-size:17px;line-height:1.7;color:#eee}
+button{border:0;padding:14px 25px;min-height:52px;margin-top:24px;border-radius:50px;background:linear-gradient(135deg,#ff3f79,#ff719b);color:#fff;font-size:16px;font-weight:bold;box-shadow:0 8px 28px rgba(255,63,121,.35);cursor:pointer;touch-action:manipulation}
+button:active{transform:scale(.95)}
+.typing{min-height:135px;font-size:17px;line-height:1.7;color:#eee}
+.video-box{width:100%;margin-top:10px}
+video{display:block;width:100%;max-height:55vh;background:#000;border-radius:18px}
+.choice{position:relative;width:100%;max-width:340px;height:190px;margin:25px auto 0}
+#yes{position:absolute;left:50%;top:50%;transform:translate(-110%,-50%);margin:0}
+#no{position:absolute;left:50%;top:50%;transform:translate(10%,-50%);margin:0;background:#444;box-shadow:none;transition:left .2s,top .2s}
+.letter{background:linear-gradient(145deg,#fff5f7,#f6dce3);color:#35151f;border-radius:18px;padding:25px 22px;text-align:left;box-shadow:0 15px 45px rgba(0,0,0,.4)}
+.letter h3{text-align:center;color:#9b3153;font-size:23px;margin-bottom:18px}
+.letter p{color:#35151f;white-space:pre-line;font-size:16px;line-height:1.8}
+.count{font-size:100px;font-weight:bold;color:#ff719b;margin-top:20px}
+.final{background:radial-gradient(circle,#361421,#080407 65%,#000)}
+.final1{font-size:20px}.final2{font-size:48px;color:#ff8eae;margin-top:20px}.final3{font-size:25px;margin-top:20px}
+@media(max-height:700px){.heart{font-size:55px}video{max-height:45vh}}
 </style>
 </head>
-
 <body>
 
-<!-- 1 -->
-<section id="s1" class="screen active">
-<div class="content">
+<section id="s1" class="screen active"><div class="content">
 <div class="heart">👀</div>
 <h1>You actually scanned it...</h1>
 <p>I guess there's no going back now 😭</p>
 <button id="start">Open my little secret ❤️</button>
-</div>
-</section>
+</div></section>
 
-<!-- 2 -->
-<section id="s2" class="screen">
-<div class="content">
-<div class="heart">💌</div>
-<h2>Okay princess...</h2>
+<section id="s2" class="screen"><div class="content">
+<div class="heart">💌</div><h2>Okay princess...</h2>
 <div id="typing" class="typing"></div>
 <button id="intro" style="display:none">I want to see it ❤️</button>
-</div>
-</section>
+</div></section>
 
-<!-- 3 -->
-<section id="s3" class="screen">
-<div class="content">
-<div class="heart">🥺</div>
-<h2>Before anything else...</h2>
-<p>
-I don't want to make excuses
-<br><br>
-I just want you to know that I genuinely mean my apology
-</p>
+<section id="s3" class="screen"><div class="content">
+<div class="heart">🥺</div><h2>Before anything else...</h2>
+<p>I don't want to make excuses<br><br>I just want you to know that I genuinely mean my apology</p>
 <button id="watch">Watch what I made for you 🎬</button>
-</div>
-</section>
+</div></section>
 
-<!-- 4 -->
-<section id="s4" class="screen">
-<div class="content">
+<section id="s4" class="screen"><div class="content">
 <h2>For You ❤️</h2>
-
-<video id="v1" controls playsinline>
-<source src="sorry.mp4" type="video/mp4">
-</video>
-
+<div class="video-box"><video id="v1" controls playsinline preload="metadata"><source src="sorry.mp4" type="video/mp4"></video></div>
 <button id="ask">I have something to ask you ❤️</button>
-</div>
-</section>
+</div></section>
 
-<!-- 5 -->
-<section id="s5" class="screen">
-<div class="content">
-<div class="heart">🥺</div>
-<h2>Do I get another chance?</h2>
-<p>Please? ❤️</p>
-
-<div class="choice">
-<button id="yes">YES ❤️</button>
-<button id="no">NO 😭</button>
-</div>
-
+<section id="s5" class="screen"><div class="content">
+<div class="heart">🥺</div><h2>Do I get another chance?</h2><p>Please? ❤️</p>
+<div class="choice"><button id="yes">YES ❤️</button><button id="no">NO 😭</button></div>
 <p id="nomsg">Please don't press no 😭</p>
-</div>
-</section>
+</div></section>
 
-<!-- 6 -->
-<section id="s6" class="screen">
-<div class="content">
+<section id="s6" class="screen"><div class="content">
 <div class="heart">💌</div>
-
-<div class="letter">
-<h3>A little letter for you ❤️</h3>
-
-<p>
-Hi princess ,
+<div class="letter"><h3>A little letter for you ❤️</h3>
+<p>Hi princess ,
 
 I'm sorry my love I know we r not in good terms and ik I messed up
 
@@ -266,280 +79,169 @@ I really want to make things right with u and really want to be with u for the r
 
 I'm so proud of you my love seeing u work so much and still have tht motivation
 
-Can't think of anyone else who is so responsible and u make me feel inspired
-</p>
+Can't think of anyone else who is so responsible and u make me feel inspired</p>
 </div>
-
 <button id="more">I have one more thing ❤️</button>
-</div>
-</section>
+</div></section>
 
-<!-- 7 -->
-<section id="s7" class="screen">
-<div class="content">
-<div class="heart">🎁</div>
-<h2>Wait...</h2>
-<p>There's something else I want you to see</p>
+<section id="s7" class="screen"><div class="content">
+<div class="heart">🎁</div><h2>Wait...</h2><p>There's something else I want you to see</p>
 <div id="count" class="count">3</div>
-</div>
-</section>
+</div></section>
 
-<!-- 8 -->
-<section id="s8" class="screen">
-<div class="content">
+<section id="s8" class="screen"><div class="content">
 <h2>Something else for you ❤️</h2>
-
-<video id="v2" controls playsinline>
-<source src="video2.mp4" type="video/mp4">
-</video>
-
+<div class="video-box"><video id="v2" controls playsinline preload="metadata"><source src="video2.mp4" type="video/mp4"></video></div>
 <button id="third">One last thing 🥺</button>
-</div>
-</section>
+</div></section>
 
-<!-- 9 -->
-<section id="s9" class="screen">
-<div class="content">
+<section id="s9" class="screen"><div class="content">
 <h2>One last thing...</h2>
-
-<video id="v3" controls playsinline>
-<source src="video3.mp4" type="video/mp4">
-</video>
-
+<div class="video-box"><video id="v3" controls playsinline preload="metadata"><source src="video3.mp4" type="video/mp4"></video></div>
 <button id="finish">Stay for the last part ❤️</button>
-</div>
-</section>
+</div></section>
 
-<!-- 10 -->
-<section id="s10" class="screen final">
-<div class="content">
-<div class="heart">❤️</div>
-<div class="final1">Hey Princess...</div>
-<div class="final2">I'm really sorry ❤️</div>
-<div class="final3">I love you my princess ❤️</div>
-</div>
-</section>
-
+<section id="s10" class="screen final"><div class="content">
+<div class="heart">❤️</div><div class="final1">Hey Princess...</div>
+<div class="final2">I'm really sorry ❤️</div><div class="final3">I love you my princess ❤️</div>
+</div></section>
 
 <script>
+(function(){
+"use strict";
 
-document.addEventListener("DOMContentLoaded",function(){
-
-const $ = id => document.getElementById(id);
+function $(id){return document.getElementById(id);}
 
 function show(n){
-    document.querySelectorAll(".screen").forEach(x=>{
-        x.classList.remove("active");
-    });
-
-    $("s"+n).classList.add("active");
-
-    document.querySelectorAll("video").forEach(v=>{
-        if(!$("s"+n).contains(v)) v.pause();
+    document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active");});
+    var target=$("s"+n);
+    if(!target)return;
+    target.classList.add("active");
+    document.querySelectorAll("video").forEach(function(v){
+        if(!target.contains(v))v.pause();
     });
 }
 
+var start=$("start");
+var intro=$("intro");
+var watch=$("watch");
+var ask=$("ask");
+var yes=$("yes");
+var no=$("no");
+var more=$("more");
+var third=$("third");
+var finish=$("finish");
+var v1=$("v1");
+var v2=$("v2");
+var v3=$("v3");
 
-/* FIRST SCREEN */
-
-$("start").addEventListener("click",function(){
+start.addEventListener("click",function(){
     show(2);
-    typeMessage();
+    startTyping();
 });
 
-
-/* TYPING */
-
-let typed=false;
-
-function typeMessage(){
-
+var typed=false;
+function startTyping(){
     if(typed)return;
-
     typed=true;
-
-    const text=
-    "I know I messed up and I know things aren't okay right now... I don't expect a few words to magically fix everything. I just want you to know that I'm genuinely sorry and I really want to make things right with you.";
-
-    let i=0;
-
-    const box=$("typing");
-
+    var text="I know I messed up and I know things aren't okay right now... I don't expect a few words to magically fix everything. I just want you to know that I'm genuinely sorry and I really want to make things right with you.";
+    var box=$("typing");
+    var i=0;
     function type(){
         if(i<text.length){
-            box.textContent+=text[i];
-            i++;
+            box.textContent+=text.charAt(i++);
             setTimeout(type,25);
         }else{
-            $("intro").style.display="inline-block";
+            intro.style.display="inline-block";
         }
     }
-
     type();
 }
 
+intro.addEventListener("click",function(){show(3);});
 
-/* INTRO */
-
-$("intro").addEventListener("click",function(){
-    show(3);
-});
-
-
-/* VIDEO 1 */
-
-$("watch").addEventListener("click",function(){
+watch.addEventListener("click",function(){
     show(4);
-    $("v1").currentTime=0;
-    $("v1").play().catch(()=>{});
+    v1.currentTime=0;
+    var p=v1.play();
+    if(p&&p.catch)p.catch(function(){});
 });
-
-
-/* VIDEO 1 → YES/NO */
 
 function question(){
-    $("v1").pause();
+    v1.pause();
     resetNo();
     show(5);
 }
+ask.addEventListener("click",question);
+v1.addEventListener("ended",question);
 
-$("ask").addEventListener("click",question);
-
-$("v1").addEventListener("ended",question);
-
-
-/* NO BUTTON */
-
-let noCount=0;
-
-$("no").addEventListener("click",function(){
-
+var noCount=0;
+no.addEventListener("click",function(){
     noCount++;
-
-    if(noCount===1)
-        $("nomsg").textContent="Are you sure? 🥺";
-
-    else if(noCount===2)
-        $("nomsg").textContent="Princess please 😭❤️";
-
-    else if(noCount===3)
-        $("nomsg").textContent="Really?? 😭";
-
-    else
-        $("nomsg").textContent="I won't give up that easily ❤️";
-
-    const area=document.querySelector(".choice");
-
-    const bw=$("no").offsetWidth;
-    const bh=$("no").offsetHeight;
-
-    let x=area.clientWidth/2-bw/2+(Math.random()*160-80);
-    let y=area.clientHeight/2-bh/2+(Math.random()*110-55);
-
+    $("nomsg").textContent=noCount===1?"Are you sure? 🥺":noCount===2?"Princess please 😭❤️":noCount===3?"Really?? 😭":"I won't give up that easily ❤️";
+    var area=document.querySelector(".choice");
+    var bw=no.offsetWidth,bh=no.offsetHeight;
+    var x=area.clientWidth/2-bw/2+(Math.random()*160-80);
+    var y=area.clientHeight/2-bh/2+(Math.random()*110-55);
     x=Math.max(5,Math.min(x,area.clientWidth-bw-5));
     y=Math.max(5,Math.min(y,area.clientHeight-bh-5));
-
-    $("no").style.left=x+"px";
-    $("no").style.top=y+"px";
-    $("no").style.transform="none";
+    no.style.left=x+"px";
+    no.style.top=y+"px";
+    no.style.transform="none";
 });
 
-
 function resetNo(){
-
     noCount=0;
-
-    $("no").style.left="50%";
-    $("no").style.top="50%";
-    $("no").style.transform="translate(10%,-50%)";
-
+    no.style.left="50%";
+    no.style.top="50%";
+    no.style.transform="translate(10%,-50%)";
     $("nomsg").textContent="Please don't press no 😭";
 }
 
+yes.addEventListener("click",function(){show(6);});
 
-/* YES */
-
-$("yes").addEventListener("click",function(){
-    show(6);
-});
-
-
-/* LETTER → COUNTDOWN */
-
-$("more").addEventListener("click",function(){
-
+more.addEventListener("click",function(){
     show(7);
-
-    let n=3;
-
+    var n=3;
     $("count").textContent=n;
-
-    const timer=setInterval(function(){
-
+    var timer=setInterval(function(){
         n--;
-
         if(n>0){
             $("count").textContent=n;
         }else{
-
             clearInterval(timer);
-
             $("count").textContent="❤️";
-
-            setTimeout(function(){
-                openVideo2();
-            },700);
+            setTimeout(openVideo2,700);
         }
-
     },1000);
 });
 
-
-/* VIDEO 2 */
-
 function openVideo2(){
-
     show(8);
-
-    $("v2").currentTime=0;
-
-    $("v2").play().catch(()=>{});
+    v2.currentTime=0;
+    var p=v2.play();
+    if(p&&p.catch)p.catch(function(){});
 }
 
-$("third").addEventListener("click",openVideo3);
-
-$("v2").addEventListener("ended",openVideo3);
-
-
-/* VIDEO 3 */
+third.addEventListener("click",openVideo3);
+v2.addEventListener("ended",openVideo3);
 
 function openVideo3(){
-
     show(9);
-
-    $("v3").currentTime=0;
-
-    $("v3").play().catch(()=>{});
+    v3.currentTime=0;
+    var p=v3.play();
+    if(p&&p.catch)p.catch(function(){});
 }
 
-$("finish").addEventListener("click",finish);
+finish.addEventListener("click",finishStory);
+v3.addEventListener("ended",finishStory);
 
-$("v3").addEventListener("ended",finish);
-
-
-/* FINAL */
-
-function finish(){
-
-    $("v3").pause();
-
+function finishStory(){
+    v3.pause();
     show(10);
-
 }
 
-});
-
+})();
 </script>
-
 </body>
 </html>
