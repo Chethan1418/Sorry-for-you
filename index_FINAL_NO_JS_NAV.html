@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="theme-color" content="#080609">
+<title>For My Princess ❤️</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{width:100%;height:100%}
+body{background:radial-gradient(circle at 50% 35%,#351624,#120910 55%,#030303);color:#fff;font-family:Arial,Helvetica,sans-serif;overflow:hidden}
+.screen{position:fixed;inset:0;width:100%;height:100%;display:none;align-items:center;justify-content:center;padding:25px 20px;text-align:center;overflow-y:auto}
+#s1{display:flex}
+body:has(.screen:target) #s1{display:none}
+.screen:target{display:flex;animation:fade .45s ease}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.content{width:100%;max-width:430px;margin:auto}
+.heart{font-size:68px;line-height:1;margin-bottom:22px;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+h1{font-size:38px;line-height:1.2;margin-bottom:18px}
+h2{font-size:28px;line-height:1.3;margin-bottom:18px}
+p{font-size:17px;line-height:1.7;color:#eee}
+.button{display:inline-block;border:0;padding:14px 25px;min-height:52px;margin-top:24px;border-radius:50px;background:linear-gradient(135deg,#ff3f79,#ff719b);color:#fff;font-size:16px;font-weight:bold;box-shadow:0 8px 28px rgba(255,63,121,.35);cursor:pointer;text-decoration:none}
+.video-box{width:100%;margin-top:10px}
+video{display:block;width:100%;max-height:55vh;background:#000;border-radius:18px}
+.choice{position:relative;width:100%;max-width:340px;height:190px;margin:25px auto 0}
+#yes{position:absolute;left:50%;top:50%;transform:translate(-110%,-50%);margin:0}
+#no{position:absolute;left:50%;top:50%;transform:translate(10%,-50%);margin:0;background:#444;box-shadow:none}
+.letter{background:linear-gradient(145deg,#fff5f7,#f6dce3);color:#35151f;border-radius:18px;padding:25px 22px;text-align:left;box-shadow:0 15px 45px rgba(0,0,0,.4)}
+.letter h3{text-align:center;color:#9b3153;font-size:23px;margin-bottom:18px}
+.letter p{color:#35151f;white-space:pre-line;font-size:16px;line-height:1.8}
+.count{font-size:100px;font-weight:bold;color:#ff719b;margin-top:20px}
+.final{background:radial-gradient(circle,#361421,#080407 65%,#000)}
+.final1{font-size:20px}.final2{font-size:48px;color:#ff8eae;margin-top:20px}.final3{font-size:25px;margin-top:20px}
+@media(max-height:700px){.heart{font-size:55px}video{max-height:45vh}}
+</style>
+</head>
+
+<body>
+
+<section id="s1" class="screen">
+<div class="content">
+<div class="heart">👀</div>
+<h1>You actually scanned it...</h1>
+<p>I guess there's no going back now 😭</p>
+<a class="button" href="#s2">Open my little secret ❤️</a>
+</div>
+</section>
+
+<section id="s2" class="screen">
+<div class="content">
+<div class="heart">💌</div>
+<h2>Okay princess...</h2>
+<p>I know I messed up and I know things aren't okay right now...</p>
+<p>I don't expect a few words to magically fix everything</p>
+<p>I just want you to know that I'm genuinely sorry ❤️</p>
+<a class="button" href="#s3">I want to see it ❤️</a>
+</div>
+</section>
+
+<section id="s3" class="screen">
+<div class="content">
+<div class="heart">🥺</div>
+<h2>Before anything else...</h2>
+<p>I don't want to make excuses<br><br>I just want you to know that I genuinely mean my apology</p>
+<a class="button" href="#s4">Watch what I made for you 🎬</a>
+</div>
+</section>
+
+<section id="s4" class="screen">
+<div class="content">
+<h2>For You ❤️</h2>
+<div class="video-box">
+<video id="v1" controls playsinline preload="metadata">
+<source src="sorry.mp4" type="video/mp4">
+</video>
+</div>
+<a class="button" href="#s5">I have something to ask you ❤️</a>
+</div>
+</section>
+
+<section id="s5" class="screen">
+<div class="content">
+<div class="heart">🥺</div>
+<h2>Do I get another chance?</h2>
+<p>Please? ❤️</p>
+<div class="choice">
+<a id="yes" class="button" href="#s6">YES ❤️</a>
+<button id="no" class="button" type="button">NO 😭</button>
+</div>
+<p id="nomsg">Please don't press no 😭</p>
+</div>
+</section>
+
+<section id="s6" class="screen">
+<div class="content">
+<div class="heart">💌</div>
+<div class="letter">
+<h3>A little letter for you ❤️</h3>
+<p>Hi princess ,
+
+I'm sorry my love I know we r not in good terms and ik I messed up
+
+I really want to make things right with u and really want to be with u for the rest of my life
+
+I'm so proud of you my love seeing u work so much and still have tht motivation
+
+Can't think of anyone else who is so responsible and u make me feel inspired</p>
+</div>
+<a class="button" href="#s7">I have one more thing ❤️</a>
+</div>
+</section>
+
+<section id="s7" class="screen">
+<div class="content">
+<div class="heart">🎁</div>
+<h2>One more thing...</h2>
+<p>Tap below when you're ready ❤️</p>
+<a class="button" href="#s8">Show me ❤️</a>
+</div>
+</section>
+
+<section id="s8" class="screen">
+<div class="content">
+<h2>Something else for you ❤️</h2>
+<div class="video-box">
+<video id="v2" controls playsinline preload="metadata">
+<source src="video2.mp4" type="video/mp4">
+</video>
+</div>
+<a class="button" href="#s9">One last thing 🥺</a>
+</div>
+</section>
+
+<section id="s9" class="screen">
+<div class="content">
+<h2>One last thing...</h2>
+<div class="video-box">
+<video id="v3" controls playsinline preload="metadata">
+<source src="video3.mp4" type="video/mp4">
+</video>
+</div>
+<a class="button" href="#s10">Stay for the last part ❤️</a>
+</div>
+</section>
+
+<section id="s10" class="screen final">
+<div class="content">
+<div class="heart">❤️</div>
+<div class="final1">Hey Princess...</div>
+<div class="final2">I'm really sorry ❤️</div>
+<div class="final3">I love you my princess ❤️</div>
+</div>
+</section>
+
+<script>
+(function(){
+var no=document.getElementById("no");
+var msg=document.getElementById("nomsg");
+var count=0;
+
+no.addEventListener("click",function(){
+    count++;
+    msg.textContent =
+        count===1 ? "Are you sure? 🥺" :
+        count===2 ? "Princess please 😭❤️" :
+        count===3 ? "Really?? 😭" :
+        "I won't give up that easily ❤️";
+
+    var area=document.querySelector(".choice");
+    var bw=no.offsetWidth;
+    var bh=no.offsetHeight;
+
+    var x=area.clientWidth/2-bw/2+(Math.random()*160-80);
+    var y=area.clientHeight/2-bh/2+(Math.random()*100-50);
+
+    x=Math.max(5,Math.min(x,area.clientWidth-bw-5));
+    y=Math.max(5,Math.min(y,area.clientHeight-bh-5));
+
+    no.style.left=x+"px";
+    no.style.top=y+"px";
+    no.style.transform="none";
+});
+})();
+</script>
+
+</body>
+</html>
