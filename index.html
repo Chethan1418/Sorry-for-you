@@ -6,17 +6,13 @@
 
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0,
-               maximum-scale=1.0, user-scalable=no">
+      maximum-scale=1.0,user-scalable=no">
 
 <meta name="theme-color" content="#080609">
 
 <title>For My Princess ❤️</title>
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
 
 * {
     margin: 0;
@@ -28,16 +24,15 @@
 html,
 body {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 }
 
 body {
-
     background:
         radial-gradient(
-            circle at 50% 35%,
+            circle at center,
             #351624 0%,
-            #130a10 45%,
+            #120910 50%,
             #030303 100%
         );
 
@@ -54,12 +49,11 @@ body {
 }
 
 
-/* =====================================================
+/* ================================
    SCREENS
-===================================================== */
+================================ */
 
 .screen {
-
     position: fixed;
 
     inset: 0;
@@ -72,80 +66,57 @@ body {
     align-items: center;
     justify-content: center;
 
-    padding:
-        max(20px, env(safe-area-inset-top))
-        20px
-        max(20px, env(safe-area-inset-bottom))
-        20px;
-
-    text-align: center;
+    padding: 25px 20px;
 
     overflow-y: auto;
-    overflow-x: hidden;
 
-    -webkit-overflow-scrolling: touch;
+    text-align: center;
 }
 
 .screen.active {
-
     display: flex;
 
     animation:
-        screenIn 0.75s ease forwards;
+        fadeIn 0.7s ease;
 }
 
-@keyframes screenIn {
+@keyframes fadeIn {
 
     from {
-
         opacity: 0;
-
-        transform:
-            translateY(18px)
-            scale(0.97);
+        transform: translateY(15px);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
+        transform: translateY(0);
     }
 }
 
 
-/* =====================================================
+/* ================================
    CONTENT
-===================================================== */
+================================ */
 
 .content {
-
     width: 100%;
-
     max-width: 430px;
 
     margin: auto;
-
-    padding: 20px 0;
 }
 
 
-/* =====================================================
+/* ================================
    HEART
-===================================================== */
+================================ */
 
 .big-heart {
-
     font-size: 70px;
 
-    line-height: 1;
-
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 
     animation:
-        heartbeat 1.25s infinite;
+        heartbeat 1.2s infinite;
 }
 
 @keyframes heartbeat {
@@ -156,19 +127,17 @@ body {
     }
 
     50% {
-        transform: scale(1.16);
+        transform: scale(1.15);
     }
 }
 
 
-/* =====================================================
+/* ================================
    TEXT
-===================================================== */
+================================ */
 
 h1 {
-
-    font-size:
-        clamp(30px, 9vw, 40px);
+    font-size: 38px;
 
     line-height: 1.2;
 
@@ -176,17 +145,14 @@ h1 {
 }
 
 h2 {
-
-    font-size:
-        clamp(23px, 7vw, 30px);
+    font-size: 27px;
 
     line-height: 1.3;
 
-    margin-bottom: 17px;
+    margin-bottom: 16px;
 }
 
 p {
-
     font-size: 17px;
 
     line-height: 1.7;
@@ -195,17 +161,18 @@ p {
 }
 
 
-/* =====================================================
+/* ================================
    BUTTON
-===================================================== */
+================================ */
 
 .button {
-
     border: none;
+
+    min-height: 50px;
 
     padding: 14px 25px;
 
-    min-height: 50px;
+    margin-top: 25px;
 
     border-radius: 50px;
 
@@ -220,108 +187,77 @@ p {
 
     font-size: 16px;
 
-    font-weight: 700;
+    font-weight: bold;
 
     cursor: pointer;
 
-    margin-top: 25px;
-
     box-shadow:
         0 8px 28px
-        rgba(255, 63, 121, 0.35);
+        rgba(255,63,121,0.35);
 
     touch-action: manipulation;
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
 }
 
 .button:active {
-
     transform: scale(0.94);
-
 }
 
 
-/* =====================================================
-   SECONDARY BUTTON
-===================================================== */
-
-.secondary-button {
-
-    background:
-        rgba(255,255,255,0.10);
-
-    border:
-        1px solid
-        rgba(255,255,255,0.15);
-
-    box-shadow: none;
-}
-
-
-/* =====================================================
+/* ================================
    TYPING
-===================================================== */
+================================ */
 
 .typing {
-
-    min-height: 125px;
+    min-height: 130px;
 
     font-size: 17px;
 
     line-height: 1.7;
 
-    color: #eeeeee;
+    color: #eee;
 }
 
 
-/* =====================================================
+/* ================================
    VIDEO
-===================================================== */
+================================ */
 
-.video-wrapper {
-
+.video-box {
     width: 100%;
 
-    margin: 10px auto 0;
+    margin-top: 10px;
 }
 
 video {
-
     display: block;
 
     width: 100%;
 
-    height: auto;
-
-    max-height: 52vh;
+    max-height: 55vh;
 
     object-fit: contain;
 
-    border-radius: 18px;
+    background: black;
 
-    background: #000;
+    border-radius: 18px;
 
     box-shadow:
         0 0 30px
         rgba(255,255,255,0.12);
 }
 
-.video-label {
-
-    margin-top: 12px;
-
-    color: #cfcfcf;
+.video-info {
+    margin-top: 10px;
 
     font-size: 14px;
+
+    color: #aaa;
 }
 
 
-/* =====================================================
+/* ================================
    YES / NO GAME
-===================================================== */
+================================ */
 
 .choice-area {
 
@@ -333,18 +269,14 @@ video {
 
     height: 190px;
 
-    margin: 22px auto 0;
+    margin: 25px auto 0;
 }
-
-
-/* YES */
 
 #yesButton {
 
     position: absolute;
 
     left: 50%;
-
     top: 50%;
 
     transform:
@@ -352,18 +284,14 @@ video {
 
     margin: 0;
 
-    z-index: 10;
+    z-index: 5;
 }
-
-
-/* NO */
 
 #noButton {
 
     position: absolute;
 
     left: 50%;
-
     top: 50%;
 
     transform:
@@ -373,108 +301,86 @@ video {
 
     background: #444;
 
-    box-shadow:
-        0 6px 18px
-        rgba(0,0,0,0.3);
+    box-shadow: none;
 
     transition:
-        left 0.22s ease,
-        top 0.22s ease,
-        transform 0.22s ease;
+        left 0.25s ease,
+        top 0.25s ease,
+        transform 0.25s ease;
 }
 
-
-/* =====================================================
-   PLAYFUL QUESTION
-===================================================== */
-
-.question-small {
-
-    color: #aaa;
+.no-message {
 
     font-size: 14px;
 
-    margin-top: 12px;
+    color: #aaa;
+
+    margin-top: 5px;
 }
 
 
-/* =====================================================
+/* ================================
    LETTER
-===================================================== */
+================================ */
 
-.letter-wrapper {
-
-    perspective: 1000px;
-
-    width: 100%;
-
-    max-width: 390px;
-
-    margin: auto;
-}
-
-.envelope {
-
-    position: relative;
+.letter {
 
     background:
         linear-gradient(
             145deg,
-            #fff4f6,
-            #f8dfe5
+            #fff5f7,
+            #f6dce3
         );
 
     color: #35151f;
 
-    border-radius: 15px;
+    border-radius: 18px;
 
-    padding: 27px 22px;
+    padding: 25px 22px;
+
+    text-align: left;
 
     box-shadow:
         0 15px 45px
-        rgba(0,0,0,0.35);
-
-    transform-origin: center;
+        rgba(0,0,0,0.4);
 
     animation:
-        letterOpen 1s ease;
+        letterAppear 0.9s ease;
 }
 
-@keyframes letterOpen {
+@keyframes letterAppear {
 
     from {
-
         opacity: 0;
 
         transform:
-            rotateX(35deg)
-            translateY(25px);
+            scale(0.9)
+            rotateX(20deg);
     }
 
     to {
-
         opacity: 1;
 
         transform:
-            rotateX(0)
-            translateY(0);
+            scale(1)
+            rotateX(0);
     }
 }
 
 .letter-title {
 
-    font-size: 24px;
+    text-align: center;
 
-    font-weight: 700;
+    font-size: 23px;
 
-    margin-bottom: 18px;
+    font-weight: bold;
 
     color: #9b3153;
+
+    margin-bottom: 20px;
 }
 
-.personal-message {
-
-    text-align: left;
+.letter-text {
 
     white-space: pre-line;
 
@@ -482,139 +388,107 @@ video {
 
     line-height: 1.8;
 
-    max-height: 50vh;
+    max-height: 52vh;
 
     overflow-y: auto;
-
-    scrollbar-width: none;
-}
-
-.personal-message::-webkit-scrollbar {
-
-    display: none;
 }
 
 
-/* =====================================================
+/* ================================
    COUNTDOWN
-===================================================== */
+================================ */
 
-.countdown-number {
-
+.countdown {
     font-size: 100px;
 
-    font-weight: 800;
+    font-weight: bold;
 
-    color: #ff6f99;
-
-    text-shadow:
-        0 0 30px
-        rgba(255,80,130,0.5);
+    color: #ff719b;
 
     animation:
-        countdownPop 1s ease;
+        pop 0.8s ease;
 }
 
-@keyframes countdownPop {
+@keyframes pop {
 
     0% {
-
+        transform: scale(1.5);
         opacity: 0;
-
-        transform:
-            scale(1.6);
-    }
-
-    60% {
-
-        opacity: 1;
-
-        transform:
-            scale(0.95);
     }
 
     100% {
-
+        transform: scale(1);
         opacity: 1;
-
-        transform:
-            scale(1);
     }
 }
 
 
-/* =====================================================
-   FINAL SCREEN
-===================================================== */
+/* ================================
+   FINAL
+================================ */
 
 .final-screen {
 
     background:
         radial-gradient(
-            circle at center,
-            #31121f,
-            #080407 65%,
+            circle,
+            #361421 0%,
+            #080407 60%,
             #000 100%
         );
 }
 
 .final-small {
 
-    font-size: 18px;
+    font-size: 19px;
 
-    color: #d9d9d9;
-
-    opacity: 0;
+    margin-top: 15px;
 
     animation:
-        finalFade 2s ease forwards;
-
-    animation-delay: 1s;
+        finalText 2s ease forwards;
 }
 
 .final-big {
 
     font-size:
-        clamp(35px, 11vw, 55px);
-
-    margin-top: 20px;
+        clamp(35px,10vw,52px);
 
     color: #ff8eae;
+
+    margin-top: 20px;
 
     opacity: 0;
 
     animation:
-        finalFade 2s ease forwards;
+        finalText 2s ease forwards;
 
-    animation-delay: 3s;
+    animation-delay: 1.5s;
 }
 
 .final-love {
 
-    font-size: 25px;
+    font-size: 24px;
 
     margin-top: 20px;
 
     opacity: 0;
 
     animation:
-        finalFade 2s ease forwards;
+        finalText 2s ease forwards;
 
-    animation-delay: 5s;
+    animation-delay: 3s;
 }
 
-@keyframes finalFade {
+@keyframes finalText {
 
     from {
-
         opacity: 0;
 
         transform:
-            translateY(15px);
+            translateY(20px);
     }
 
     to {
-
         opacity: 1;
 
         transform:
@@ -623,147 +497,68 @@ video {
 }
 
 
-/* =====================================================
+/* ================================
    FLOATING HEARTS
-===================================================== */
+================================ */
 
 .floating-heart {
 
     position: fixed;
 
-    bottom: -50px;
+    bottom: -40px;
 
     pointer-events: none;
 
     z-index: 999;
 
     animation:
-        floatHeart linear forwards;
+        floatUp linear forwards;
 }
 
-@keyframes floatHeart {
+@keyframes floatUp {
 
     0% {
-
         transform:
-            translateY(0)
-            rotate(0deg);
+            translateY(0);
 
         opacity: 0;
     }
 
     10% {
-
         opacity: 1;
     }
 
     100% {
-
         transform:
             translateY(-110vh)
-            rotate(25deg);
+            rotate(20deg);
 
         opacity: 0;
     }
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* ================================
+   SMALL PHONES
+================================ */
 
 @media (max-height: 700px) {
 
-    .content {
-
-        padding: 10px 0;
-    }
-
     .big-heart {
-
         font-size: 55px;
-
-        margin-bottom: 15px;
+        margin-bottom: 14px;
     }
 
     .button {
-
         margin-top: 18px;
     }
 
-    .choice-area {
-
-        height: 170px;
-    }
-
     video {
-
-        max-height: 47vh;
-    }
-
-}
-
-@media (max-width: 360px) {
-
-    .button {
-
-        padding:
-            13px 20px;
-
-        font-size: 15px;
+        max-height: 45vh;
     }
 
     .choice-area {
-
-        max-width: 300px;
-    }
-
-}
-
-
-/* =====================================================
-   FULLSCREEN HEART BURST
-===================================================== */
-
-.burst-heart {
-
-    position: fixed;
-
-    left: 50%;
-
-    top: 50%;
-
-    font-size: 25px;
-
-    pointer-events: none;
-
-    z-index: 2000;
-
-    animation:
-        burst 1.8s ease-out forwards;
-}
-
-@keyframes burst {
-
-    from {
-
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(0.4);
-    }
-
-    to {
-
-        opacity: 0;
-
-        transform:
-            translate(
-                calc(-50% + var(--x)),
-                calc(-50% + var(--y))
-            )
-            scale(1.3);
+        height: 165px;
     }
 }
 
@@ -775,260 +570,253 @@ video {
 <body>
 
 
-<!-- =====================================================
-     SCREEN 1 — QR ARRIVAL
-===================================================== -->
+<!-- =================================
+     1 — QR LANDING
+================================= -->
 
 <section
-id="screen1"
-class="screen active">
+    id="screen1"
+    class="screen active">
 
-<div class="content">
+    <div class="content">
 
-    <div class="big-heart">
-        👀
+        <div class="big-heart">
+            👀
+        </div>
+
+        <h1>
+            You actually scanned it...
+        </h1>
+
+        <p>
+            I guess there's no going back now 😭
+        </p>
+
+        <button
+            class="button"
+            onclick="goTo(2)">
+
+            Open my little secret ❤️
+
+        </button>
+
     </div>
-
-    <h1>
-        You actually scanned it...
-    </h1>
-
-    <p>
-        I guess there's no going back now 😭
-    </p>
-
-    <button
-        class="button"
-        onclick="showScreen(2)">
-
-        Open my little secret ❤️
-
-    </button>
-
-</div>
 
 </section>
 
 
 
-<!-- =====================================================
-     SCREEN 2 — LITTLE SECRET
-===================================================== -->
+<!-- =================================
+     2 — INTRO
+================================= -->
 
 <section
-id="screen2"
-class="screen">
+    id="screen2"
+    class="screen">
 
-<div class="content">
+    <div class="content">
 
-    <div class="big-heart">
-        💌
+        <div class="big-heart">
+            💌
+        </div>
+
+        <h2>
+            Okay princess...
+        </h2>
+
+        <div
+            id="typing"
+            class="typing">
+        </div>
+
+        <button
+            id="introButton"
+            class="button"
+            style="display:none"
+            onclick="goTo(3)">
+
+            I want to see it ❤️
+
+        </button>
+
     </div>
-
-    <h2>
-        Okay princess...
-    </h2>
-
-    <div
-        id="typingText"
-        class="typing">
-    </div>
-
-    <button
-        id="secretButton"
-        class="button"
-        style="display:none"
-        onclick="showScreen(3)">
-
-        I want to see it ❤️
-
-    </button>
-
-</div>
 
 </section>
 
 
 
-<!-- =====================================================
-     SCREEN 3 — LETTER INTRO
-===================================================== -->
+<!-- =================================
+     3 — BEFORE VIDEO
+================================= -->
 
 <section
-id="screen3"
-class="screen">
+    id="screen3"
+    class="screen">
 
-<div class="content">
+    <div class="content">
 
-    <div class="big-heart">
-        🥺
+        <div class="big-heart">
+            🥺
+        </div>
+
+        <h2>
+            Before anything else...
+        </h2>
+
+        <p>
+
+            I don't want to make excuses
+
+            <br><br>
+
+            I just want you to know
+            that I genuinely mean my apology
+
+        </p>
+
+        <button
+            class="button"
+            onclick="openVideo1()">
+
+            Watch what I made for you 🎬
+
+        </button>
+
     </div>
-
-    <h2>
-        Before anything else...
-    </h2>
-
-    <p>
-
-        I just want you to know
-        that I really mean this
-
-        <br><br>
-
-        No excuses
-
-        <br>
-
-        Just me being honest with you ❤️
-
-    </p>
-
-    <button
-        class="button"
-        onclick="openVideo1()">
-
-        Watch what I made for you 🎬
-
-    </button>
-
-</div>
 
 </section>
 
 
 
-<!-- =====================================================
-     SCREEN 4 — VIDEO 1
-===================================================== -->
+<!-- =================================
+     4 — VIDEO 1
+================================= -->
 
 <section
-id="screen4"
-class="screen">
+    id="screen4"
+    class="screen">
 
-<div class="content">
+    <div class="content">
 
-    <h2>
-        For You ❤️
-    </h2>
+        <h2>
+            For You ❤️
+        </h2>
 
-    <div class="video-wrapper">
+        <div class="video-box">
 
-        <video
-            id="video1"
-            controls
-            playsinline
-            preload="metadata">
+            <video
+                id="video1"
+                controls
+                playsinline
+                preload="metadata">
 
-            <source
-                src="sorry.mp4"
-                type="video/mp4">
+                <source
+                    src="sorry.mp4"
+                    type="video/mp4">
 
-        </video>
+            </video>
 
-        <div class="video-label">
+            <div class="video-info">
+                ❤️ Watch this till the end
+            </div>
 
-            ❤️ Watch this till the end
+        </div>
+
+        <button
+            class="button"
+            onclick="goToQuestion()">
+
+            I have something to ask you ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     5 — YES / NO
+================================= -->
+
+<section
+    id="screen5"
+    class="screen">
+
+    <div class="content">
+
+        <div class="big-heart">
+            🥺
+        </div>
+
+        <h2>
+            Do I get another chance?
+        </h2>
+
+        <p>
+            Please? ❤️
+        </p>
+
+        <div
+            id="choiceArea"
+            class="choice-area">
+
+            <button
+                id="yesButton"
+                class="button"
+                onclick="sayYes()">
+
+                YES ❤️
+
+            </button>
+
+            <button
+                id="noButton"
+                class="button"
+                onclick="moveNo()">
+
+                NO 😭
+
+            </button>
+
+        </div>
+
+        <div
+            id="noMessage"
+            class="no-message">
+
+            Please don't press no 😭
 
         </div>
 
     </div>
 
-    <button
-        class="button"
-        onclick="goToQuestion()">
-
-        I have something to ask you ❤️
-
-    </button>
-
-</div>
-
 </section>
 
 
 
-<!-- =====================================================
-     SCREEN 5 — YES / NO
-===================================================== -->
+<!-- =================================
+     6 — PERSONAL LETTER
+================================= -->
 
 <section
-id="screen5"
-class="screen">
+    id="screen6"
+    class="screen">
 
-<div class="content">
+    <div class="content">
 
-    <div class="big-heart">
-        🥺
-    </div>
+        <div class="big-heart">
+            💌
+        </div>
 
-    <h2>
-        Okay...
-    </h2>
-
-    <p>
-        Do I get another chance?
-    </p>
-
-    <div class="choice-area"
-         id="choiceArea">
-
-        <button
-            id="yesButton"
-            class="button"
-            onclick="sayYes()">
-
-            YES ❤️
-
-        </button>
-
-        <button
-            id="noButton"
-            class="button"
-            onclick="moveNoButton()">
-
-            NO 😭
-
-        </button>
-
-    </div>
-
-    <div
-        id="noText"
-        class="question-small">
-
-        Please don't press no 😭
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SCREEN 6 — PERSONAL LETTER
-===================================================== -->
-
-<section
-id="screen6"
-class="screen">
-
-<div class="content">
-
-    <div class="big-heart">
-        💌
-    </div>
-
-    <div class="letter-wrapper">
-
-        <div class="envelope">
+        <div class="letter">
 
             <div class="letter-title">
                 A little letter for you ❤️
             </div>
 
-            <div class="personal-message">
+            <div class="letter-text">
 
 Hi princess ,
 
@@ -1044,192 +832,179 @@ Can't think of anyone else who is so responsible and u make me feel inspired
 
         </div>
 
+        <button
+            class="button"
+            onclick="startCountdown()">
+
+            I have one more thing ❤️
+
+        </button>
+
     </div>
-
-
-    <button
-        class="button"
-        onclick="startCountdown()">
-
-        I have one more thing ❤️
-
-    </button>
-
-</div>
 
 </section>
 
 
 
-<!-- =====================================================
-     SCREEN 7 — COUNTDOWN
-===================================================== -->
+<!-- =================================
+     7 — COUNTDOWN
+================================= -->
 
 <section
-id="screen7"
-class="screen">
+    id="screen7"
+    class="screen">
 
-<div class="content">
+    <div class="content">
 
-    <div class="big-heart">
-        🎁
-    </div>
+        <div class="big-heart">
+            🎁
+        </div>
 
-    <h2>
-        Wait...
-    </h2>
+        <h2>
+            Wait...
+        </h2>
 
-    <p>
-        There's something else I want you to see
-    </p>
+        <p>
+            There's something else I want you to see
+        </p>
 
-    <div
-        id="countdown"
-        class="countdown-number">
+        <div
+            id="countdown"
+            class="countdown">
 
-        3
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SCREEN 8 — VIDEO 2
-===================================================== -->
-
-<section
-id="screen8"
-class="screen">
-
-<div class="content">
-
-    <h2>
-        Something else for you ❤️
-    </h2>
-
-    <div class="video-wrapper">
-
-        <video
-            id="video2"
-            controls
-            playsinline
-            preload="metadata">
-
-            <source
-                src="video2.mp4"
-                type="video/mp4">
-
-        </video>
-
-        <div class="video-label">
-
-            ❤️ Just one more
+            3
 
         </div>
 
     </div>
 
-    <button
-        class="button"
-        onclick="openVideo3()">
-
-        Okay... one last thing 🥺
-
-    </button>
-
-</div>
-
 </section>
 
 
 
-<!-- =====================================================
-     SCREEN 9 — VIDEO 3
-===================================================== -->
+<!-- =================================
+     8 — VIDEO 2
+================================= -->
 
 <section
-id="screen9"
-class="screen">
+    id="screen8"
+    class="screen">
 
-<div class="content">
+    <div class="content">
 
-    <h2>
-        One last thing...
-    </h2>
+        <h2>
+            Something else for you ❤️
+        </h2>
 
-    <div class="video-wrapper">
+        <div class="video-box">
 
-        <video
-            id="video3"
-            controls
-            playsinline
-            preload="metadata">
+            <video
+                id="video2"
+                controls
+                playsinline
+                preload="metadata">
 
-            <source
-                src="video3.mp4"
-                type="video/mp4">
+                <source
+                    src="video2.mp4"
+                    type="video/mp4">
 
-        </video>
+            </video>
 
-        <div class="video-label">
-
-            ❤️ This one is really for you
+            <div class="video-info">
+                ❤️ Just one more
+            </div>
 
         </div>
 
+        <button
+            class="button"
+            onclick="openVideo3()">
+
+            One last thing 🥺
+
+        </button>
+
     </div>
-
-    <button
-        class="button"
-        onclick="showFinal()">
-
-        Stay for the last part ❤️
-
-    </button>
-
-</div>
 
 </section>
 
 
 
-<!-- =====================================================
-     SCREEN 10 — FINAL
-===================================================== -->
+<!-- =================================
+     9 — VIDEO 3
+================================= -->
 
 <section
-id="screen10"
-class="screen final-screen">
+    id="screen9"
+    class="screen">
 
-<div class="content">
+    <div class="content">
 
-    <div class="big-heart">
-        ❤️
+        <h2>
+            One last thing...
+        </h2>
+
+        <div class="video-box">
+
+            <video
+                id="video3"
+                controls
+                playsinline
+                preload="metadata">
+
+                <source
+                    src="video3.mp4"
+                    type="video/mp4">
+
+            </video>
+
+            <div class="video-info">
+                ❤️ This one is really for you
+            </div>
+
+        </div>
+
+        <button
+            class="button"
+            onclick="showFinal()">
+
+            Stay for the last part ❤️
+
+        </button>
+
     </div>
 
-    <div class="final-small">
+</section>
 
-        Hey Princess...
+
+
+<!-- =================================
+     10 — FINAL
+================================= -->
+
+<section
+    id="screen10"
+    class="screen final-screen">
+
+    <div class="content">
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+        <div class="final-small">
+            Hey Princess...
+        </div>
+
+        <div class="final-big">
+            I'm really sorry ❤️
+        </div>
+
+        <div class="final-love">
+            I love you my princess ❤️
+        </div>
 
     </div>
-
-    <div class="final-big">
-
-        I'm really sorry ❤️
-
-    </div>
-
-    <div class="final-love">
-
-        I love you my princess ❤️
-
-    </div>
-
-</div>
 
 </section>
 
@@ -1237,22 +1012,19 @@ class="screen final-screen">
 
 <script>
 
+/* =================================
+   SCREEN NAVIGATION
+================================= */
 
-/* =====================================================
-   SCREEN MANAGEMENT
-===================================================== */
+function goTo(number) {
 
-function showScreen(number) {
+    document
+        .querySelectorAll(".screen")
+        .forEach(function(screen) {
 
-    const screens =
-        document.querySelectorAll(".screen");
+            screen.classList.remove("active");
 
-
-    screens.forEach(function(screen) {
-
-        screen.classList.remove("active");
-
-    });
+        });
 
 
     const target =
@@ -1262,20 +1034,19 @@ function showScreen(number) {
 
 
     if (!target) {
-
         return;
-
     }
 
 
     target.classList.add("active");
+
 
     target.scrollTop = 0;
 
 
     /*
        Stop videos that aren't
-       currently visible.
+       on the current screen.
     */
 
     document
@@ -1291,11 +1062,6 @@ function showScreen(number) {
         });
 
 
-    /*
-       Start typing when screen 2
-       appears.
-    */
-
     if (number === 2) {
 
         startTyping();
@@ -1305,65 +1071,58 @@ function showScreen(number) {
 }
 
 
-/* =====================================================
-   TYPING MESSAGE
-===================================================== */
+/* =================================
+   INTRO TYPING
+================================= */
 
-const firstMessage =
+const message =
 "I know I messed up and I know things aren't okay right now... I don't expect a few words to magically fix everything. I just want you to know that I'm genuinely sorry and I really want to make things right with you.";
 
 
-let typingStarted = false;
+let typingDone = false;
 
 
 function startTyping() {
 
-    if (typingStarted) {
-
+    if (typingDone) {
         return;
-
     }
 
 
-    typingStarted = true;
+    typingDone = true;
 
 
-    const text =
+    const output =
         document.getElementById(
-            "typingText"
+            "typing"
         );
 
 
     const button =
         document.getElementById(
-            "secretButton"
+            "introButton"
         );
 
 
-    let index = 0;
+    let position = 0;
 
 
-    function typeNext() {
+    function type() {
 
-        if (
-            index <
-            firstMessage.length
-        ) {
+        if (position < message.length) {
 
-            text.textContent +=
-                firstMessage.charAt(index);
+            output.textContent +=
+                message[position];
 
-            index++;
+            position++;
 
 
             setTimeout(
-                typeNext,
+                type,
                 30
             );
 
-        }
-
-        else {
+        } else {
 
             button.style.display =
                 "inline-block";
@@ -1373,18 +1132,18 @@ function startTyping() {
     }
 
 
-    typeNext();
+    type();
 
 }
 
 
-/* =====================================================
+/* =================================
    VIDEO 1
-===================================================== */
+================================= */
 
 function openVideo1() {
 
-    showScreen(4);
+    goTo(4);
 
 
     const video =
@@ -1397,22 +1156,15 @@ function openVideo1() {
 
 
     video.play().catch(
-        function() {
-
-            /*
-               Browser may require
-               manual play.
-            */
-
-        }
+        function() {}
     );
 
 }
 
 
-/* =====================================================
-   GO TO QUESTION
-===================================================== */
+/* =================================
+   VIDEO 1 → QUESTION
+================================= */
 
 function goToQuestion() {
 
@@ -1425,20 +1177,260 @@ function goToQuestion() {
     video.pause();
 
 
-    resetNoButton();
+    resetNo();
 
 
-    showScreen(5);
+    goTo(5);
 
 }
 
 
-/* =====================================================
-   YES BUTTON
-===================================================== */
+/*
+   If Video 1 finishes,
+   automatically show YES/NO.
+*/
+
+document
+    .getElementById("video1")
+    .addEventListener(
+        "ended",
+        function() {
+
+            goToQuestion();
+
+        }
+    );
+
+
+/* =================================
+   YES
+================================= */
 
 function sayYes() {
 
-    resetNoButton();
+    resetNo();
 
-    heartBur
+    goTo(6);
+
+}
+
+
+/* =================================
+   NO BUTTON
+================================= */
+
+let noCount = 0;
+
+
+function moveNo() {
+
+    const button =
+        document.getElementById(
+            "noButton"
+        );
+
+
+    const area =
+        document.getElementById(
+            "choiceArea"
+        );
+
+
+    const message =
+        document.getElementById(
+            "noMessage"
+        );
+
+
+    noCount++;
+
+
+    if (noCount === 1) {
+
+        message.textContent =
+            "Are you sure? 🥺";
+
+    }
+
+    else if (noCount === 2) {
+
+        message.textContent =
+            "Princess please 😭❤️";
+
+    }
+
+    else if (noCount === 3) {
+
+        message.textContent =
+            "Really?? 😭";
+
+    }
+
+    else {
+
+        message.textContent =
+            "I won't give up that easily ❤️";
+
+    }
+
+
+    const areaWidth =
+        area.clientWidth;
+
+    const areaHeight =
+        area.clientHeight;
+
+    const buttonWidth =
+        button.offsetWidth;
+
+    const buttonHeight =
+        button.offsetHeight;
+
+
+    /*
+       Small movement only.
+    */
+
+    const rangeX = 85;
+
+    const rangeY = 60;
+
+
+    let x =
+        (areaWidth / 2)
+        - (buttonWidth / 2)
+        + (
+            Math.random()
+            * rangeX
+            * 2
+        )
+        - rangeX;
+
+
+    let y =
+        (areaHeight / 2)
+        - (buttonHeight / 2)
+        + (
+            Math.random()
+            * rangeY
+            * 2
+        )
+        - rangeY;
+
+
+    const margin = 5;
+
+
+    x =
+        Math.max(
+            margin,
+            Math.min(
+                x,
+                areaWidth -
+                buttonWidth -
+                margin
+            )
+        );
+
+
+    y =
+        Math.max(
+            margin,
+            Math.min(
+                y,
+                areaHeight -
+                buttonHeight -
+                margin
+            )
+        );
+
+
+    button.style.left =
+        x + "px";
+
+    button.style.top =
+        y + "px";
+
+    button.style.transform =
+        "none";
+
+}
+
+
+/* =================================
+   RESET NO
+================================= */
+
+function resetNo() {
+
+    const button =
+        document.getElementById(
+            "noButton"
+        );
+
+
+    button.style.left =
+        "50%";
+
+    button.style.top =
+        "50%";
+
+    button.style.transform =
+        "translate(10%, -50%)";
+
+
+    noCount = 0;
+
+
+    document
+        .getElementById(
+            "noMessage"
+        )
+        .textContent =
+        "Please don't press no 😭";
+
+}
+
+
+/* =================================
+   COUNTDOWN
+================================= */
+
+function startCountdown() {
+
+    goTo(7);
+
+
+    let number = 3;
+
+
+    const display =
+        document.getElementById(
+            "countdown"
+        );
+
+
+    display.textContent =
+        number;
+
+
+    const timer =
+        setInterval(
+            function() {
+
+                number--;
+
+
+                if (number > 0) {
+
+                    display.textContent =
+                        number;
+
+                }
+
+                else {
+
+                    clearInterval(timer);
+
+                    display.textContent =
+                          
