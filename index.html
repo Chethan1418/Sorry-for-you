@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0, user-scalable=no">
 
-<meta name="theme-color"
-content="#080808">
+<meta name="theme-color" content="#080609">
 
 <title>For My Princess ❤️</title>
 
 <style>
 
+/* =========================================
+   BASIC RESET
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html,
 body {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
 
     background:
         radial-gradient(
-            circle at center,
-            #24111a 0%,
-            #090609 55%,
+            circle at 50% 35%,
+            #321523 0%,
+            #11090e 45%,
             #030303 100%
         );
 
@@ -50,9 +54,9 @@ body {
 }
 
 
-/* ==============================
-   SCREENS
-============================== */
+/* =========================================
+   SCREEN SYSTEM
+========================================= */
 
 .screen {
 
@@ -63,55 +67,42 @@ body {
     width: 100%;
     height: 100%;
 
-    display: flex;
+    display: none;
 
     align-items: center;
     justify-content: center;
 
-    padding: 22px;
+    padding:
+        max(20px, env(safe-area-inset-top))
+        20px
+        max(20px, env(safe-area-inset-bottom))
+        20px;
 
     text-align: center;
 
-    opacity: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    visibility: hidden;
-
-    transition:
-        opacity 0.8s ease,
-        visibility 0.8s ease;
+    -webkit-overflow-scrolling: touch;
 }
 
 .screen.active {
 
-    opacity: 1;
-
-    visibility: visible;
-}
-
-
-/* ==============================
-   CONTENT
-============================== */
-
-.content {
-
-    width: 100%;
-
-    max-width: 430px;
+    display: flex;
 
     animation:
-        appear 0.9s ease;
+        screenIn 0.7s ease forwards;
 }
 
-@keyframes appear {
+@keyframes screenIn {
 
     from {
 
         opacity: 0;
 
         transform:
-            translateY(25px)
-            scale(0.96);
+            translateY(18px)
+            scale(0.98);
     }
 
     to {
@@ -125,103 +116,123 @@ body {
 }
 
 
-/* ==============================
+/* =========================================
+   CONTENT
+========================================= */
+
+.content {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: auto;
+
+    padding:
+        20px 0;
+}
+
+
+/* =========================================
    HEART
-============================== */
+========================================= */
 
 .big-heart {
 
-    font-size: 70px;
+    font-size: 68px;
 
-    margin-bottom: 20px;
+    line-height: 1;
+
+    margin-bottom: 24px;
 
     animation:
-        heartbeat 1.3s infinite;
+        heartbeat 1.25s infinite;
 }
 
 @keyframes heartbeat {
 
-    0% {
+    0%,
+    100% {
         transform: scale(1);
     }
 
     50% {
         transform: scale(1.16);
     }
-
-    100% {
-        transform: scale(1);
-    }
 }
 
 
-/* ==============================
+/* =========================================
    TEXT
-============================== */
+========================================= */
 
 h1 {
 
-    font-size: 37px;
-
-    margin-bottom: 18px;
+    font-size: clamp(30px, 9vw, 40px);
 
     line-height: 1.2;
+
+    margin-bottom: 16px;
 }
 
 h2 {
 
-    font-size: 27px;
-
-    margin-bottom: 18px;
+    font-size: clamp(23px, 7vw, 30px);
 
     line-height: 1.3;
+
+    margin-bottom: 17px;
 }
 
 p {
 
-    font-size: 18px;
+    font-size: 17px;
 
-    line-height: 1.7;
+    line-height: 1.65;
 
-    color: #e6e6e6;
+    color: #e5e5e5;
 }
 
 
-/* ==============================
+/* =========================================
    BUTTON
-============================== */
+========================================= */
 
 .button {
 
     border: none;
 
-    padding: 15px 29px;
+    padding: 14px 24px;
+
+    min-height: 50px;
 
     border-radius: 50px;
 
     background:
         linear-gradient(
             135deg,
-            #ff477e,
-            #ff6b9a
+            #ff3f79,
+            #ff719b
         );
 
     color: white;
 
-    font-size: 17px;
+    font-size: 16px;
 
-    font-weight: 600;
+    font-weight: 700;
 
     cursor: pointer;
 
-    margin-top: 28px;
+    margin-top: 25px;
 
     box-shadow:
-        0 10px 35px
-        rgba(255, 71, 126, 0.35);
+        0 8px 28px
+        rgba(255, 63, 121, 0.35);
+
+    touch-action: manipulation;
 
     transition:
-        transform 0.2s ease;
+        transform 0.15s ease;
 }
 
 .button:active {
@@ -230,15 +241,15 @@ p {
 }
 
 
-/* ==============================
-   TYPING
-============================== */
+/* =========================================
+   TYPING TEXT
+========================================= */
 
 .typing {
 
-    min-height: 100px;
+    min-height: 125px;
 
-    font-size: 18px;
+    font-size: 17px;
 
     line-height: 1.7;
 
@@ -246,15 +257,15 @@ p {
 }
 
 
-/* ==============================
-   VIDEO
-============================== */
+/* =========================================
+   VIDEO AREA
+========================================= */
 
-.video-container {
+.video-wrapper {
 
     width: 100%;
 
-    max-width: 430px;
+    margin: 10px auto 0;
 }
 
 video {
@@ -263,21 +274,34 @@ video {
 
     width: 100%;
 
-    max-height: 68vh;
+    height: auto;
 
-    border-radius: 20px;
+    max-height: 52vh;
 
-    background: black;
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    background: #000;
 
     box-shadow:
-        0 0 35px
+        0 0 30px
         rgba(255,255,255,0.12);
 }
 
+.video-label {
 
-/* ==============================
-   YES / NO AREA
-============================== */
+    margin-top: 12px;
+
+    color: #cfcfcf;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   YES / NO GAME
+========================================= */
 
 .choice-area {
 
@@ -285,13 +309,17 @@ video {
 
     width: 100%;
 
-    height: 150px;
+    max-width: 340px;
 
-    margin-top: 20px;
+    height: 190px;
+
+    margin: 22px auto 0;
+
+    border-radius: 25px;
 }
 
 
-/* YES */
+/* YES BUTTON */
 
 #yesButton {
 
@@ -302,13 +330,15 @@ video {
     top: 50%;
 
     transform:
-        translate(-115%, -50%);
+        translate(-110%, -50%);
 
-    z-index: 5;
+    margin: 0;
+
+    z-index: 10;
 }
 
 
-/* NO */
+/* NO BUTTON */
 
 #noButton {
 
@@ -319,26 +349,36 @@ video {
     top: 50%;
 
     transform:
-        translate(15%, -50%);
+        translate(10%, -50%);
 
-    z-index: 5;
+    margin: 0;
 
-    background:
-        #444;
+    background: #444;
 
-    box-shadow: none;
+    box-shadow:
+        0 6px 18px
+        rgba(0,0,0,0.3);
 
     transition:
-        left 0.25s ease,
-        top 0.25s ease;
+        left 0.22s ease,
+        top 0.22s ease,
+        transform 0.22s ease;
 }
 
 
-/* ==============================
+/* =========================================
    PERSONAL MESSAGE
-============================== */
+========================================= */
 
 .personal-message {
+
+    width: 100%;
+
+    max-height: 55vh;
+
+    overflow-y: auto;
+
+    padding: 5px 8px;
 
     text-align: left;
 
@@ -348,13 +388,9 @@ video {
 
     line-height: 1.75;
 
-    color: #f3f3f3;
+    color: #f2f2f2;
 
-    max-height: 70vh;
-
-    overflow-y: auto;
-
-    padding: 5px;
+    -webkit-overflow-scrolling: touch;
 
     scrollbar-width: none;
 }
@@ -365,35 +401,35 @@ video {
 }
 
 
-/* ==============================
-   FINAL
-============================== */
+/* =========================================
+   FINAL MESSAGE
+========================================= */
 
 .final-message {
 
-    margin-top: 20px;
+    margin-top: 18px;
 
-    font-size: 22px;
+    font-size: 21px;
 
-    line-height: 1.7;
+    line-height: 1.65;
 
     color: #ff9ab8;
 }
 
 
-/* ==============================
+/* =========================================
    FLOATING HEARTS
-============================== */
+========================================= */
 
 .floating-heart {
 
     position: fixed;
 
-    bottom: -40px;
+    bottom: -50px;
 
     pointer-events: none;
 
-    z-index: 100;
+    z-index: 999;
 
     animation:
         floatHeart linear forwards;
@@ -426,32 +462,77 @@ video {
 }
 
 
-/* ==============================
-   SMALL PHONES
-============================== */
+/* =========================================
+   MOBILE FIXES
+========================================= */
 
-@media (max-width: 380px) {
+@media (max-height: 700px) {
 
-    h1 {
-        font-size: 32px;
-    }
+    .content {
 
-    h2 {
-        font-size: 24px;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    .personal-message {
-        font-size: 16px;
+        padding: 10px 0;
     }
 
     .big-heart {
-        font-size: 60px;
+
+        font-size: 55px;
+
+        margin-bottom: 15px;
     }
 
+    h1 {
+
+        margin-bottom: 12px;
+    }
+
+    h2 {
+
+        margin-bottom: 12px;
+    }
+
+    .button {
+
+        margin-top: 18px;
+    }
+
+    .choice-area {
+
+        height: 170px;
+    }
+
+    video {
+
+        max-height: 47vh;
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    .button {
+
+        padding: 13px 20px;
+
+        font-size: 15px;
+    }
+
+    .choice-area {
+
+        max-width: 300px;
+    }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+button {
+
+    user-select: none;
+
+    -webkit-user-select: none;
 }
 
 </style>
@@ -462,245 +543,237 @@ video {
 <body>
 
 
-<!-- ==================================
+<!-- =========================================
      SCREEN 1
-================================== -->
+========================================= -->
 
-<section
-id="screen1"
-class="screen active">
+<section id="screen1" class="screen active">
 
-<div class="content">
+    <div class="content">
 
-<div class="big-heart">
-❤️
-</div>
+        <div class="big-heart">
+            ❤️
+        </div>
 
-<h1>
-Hey Princess...
-</h1>
+        <h1>
+            Hey Princess...
+        </h1>
 
-<p>
-I made something just for you
-</p>
+        <p>
+            I made something just for you
+        </p>
 
-<button
-class="button"
-onclick="showScreen(2)">
+        <button
+            class="button"
+            onclick="showScreen(2)">
 
-Tap here ❤️
+            Tap here ❤️
 
-</button>
+        </button>
 
-</div>
+    </div>
 
 </section>
 
 
 
-<!-- ==================================
+<!-- =========================================
      SCREEN 2
-================================== -->
+========================================= -->
 
-<section
-id="screen2"
-class="screen">
+<section id="screen2" class="screen">
 
-<div class="content">
+    <div class="content">
 
-<div class="big-heart">
-🥺
-</div>
+        <div class="big-heart">
+            🥺
+        </div>
 
-<h2>
-I need to tell you something
-</h2>
+        <h2>
+            I need to tell you something
+        </h2>
 
-<div
-id="typingText"
-class="typing">
-</div>
+        <div
+            id="typingText"
+            class="typing">
+        </div>
 
-<button
-id="sorryButton"
-class="button"
-style="display:none"
-onclick="showScreen(3)">
+        <button
+            id="sorryButton"
+            class="button"
+            style="display:none"
+            onclick="showScreen(3)">
 
-I'm really sorry ❤️
+            I'm really sorry ❤️
 
-</button>
+        </button>
 
-</div>
+    </div>
 
 </section>
 
 
 
-<!-- ==================================
+<!-- =========================================
      SCREEN 3
-================================== -->
+========================================= -->
 
-<section
-id="screen3"
-class="screen">
+<section id="screen3" class="screen">
 
-<div class="content">
+    <div class="content">
 
-<div class="big-heart">
-💗
-</div>
+        <div class="big-heart">
+            💗
+        </div>
 
-<h2>
-Before you watch this...
-</h2>
+        <h2>
+            Before you watch this...
+        </h2>
 
-<p>
+        <p>
 
-I don't expect everything
-to become okay instantly
+            I don't expect everything
+            to become okay instantly
 
-<br><br>
+            <br><br>
 
-I just want you to know
-that I really mean my apology
+            I just want you to know
+            that I really mean my apology
 
-</p>
+        </p>
 
-<button
-class="button"
-onclick="playVideo1()">
+        <button
+            class="button"
+            onclick="openVideo1()">
 
-Watch my message 🎬
+            Watch my message 🎬
 
-</button>
+        </button>
 
-</div>
+    </div>
 
 </section>
 
 
 
-<!-- ==================================
-     SCREEN 4
-     VIDEO 1
-================================== -->
+<!-- =========================================
+     SCREEN 4 — VIDEO 1
+========================================= -->
 
-<section
-id="screen4"
-class="screen">
+<section id="screen4" class="screen">
 
-<div class="content">
+    <div class="content">
 
-<h2>
-For You ❤️
-</h2>
+        <h2>
+            For You ❤️
+        </h2>
 
-<div class="video-container">
+        <div class="video-wrapper">
 
-<video
-id="video1"
-controls
-playsinline
-preload="metadata">
+            <video
+                id="video1"
+                controls
+                playsinline
+                preload="metadata">
 
-<source
-src="sorry.mp4"
-type="video/mp4">
+                <source
+                    src="sorry.mp4"
+                    type="video/mp4">
 
-</video>
+                Your browser does not support
+                video playback.
 
-</div>
+            </video>
 
-<button
-class="button"
-onclick="showScreen(5)">
+            <div class="video-label">
+                ❤️ Watch this till the end
+            </div>
 
-There's something I want to ask you ❤️
-
-</button>
-
-</div>
-
-</section>
+        </div>
 
 
+        <button
+            class="button"
+            onclick="goToQuestion()">
 
-<!-- ==================================
-     SCREEN 5
-     YES / NO
-================================== -->
+            I have something to ask you ❤️
 
-<section
-id="screen5"
-class="screen">
+        </button>
 
-<div class="content">
-
-<div class="big-heart">
-🥺
-</div>
-
-<h2>
-Will you forgive me?
-</h2>
-
-<p>
-
-Please? ❤️
-
-</p>
-
-
-<div class="choice-area">
-
-<button
-id="yesButton"
-class="button"
-onclick="sayYes()">
-
-YES ❤️
-
-</button>
-
-
-<button
-id="noButton"
-class="button"
-onclick="moveNoButton()">
-
-NO 😭
-
-</button>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 
-<!-- ==================================
-     SCREEN 6
-     PERSONAL MESSAGE
-================================== -->
+<!-- =========================================
+     SCREEN 5 — YES / NO
+========================================= -->
 
-<section
-id="screen6"
-class="screen">
+<section id="screen5" class="screen">
 
-<div class="content">
+    <div class="content">
 
-<div class="big-heart">
-❤️
-</div>
+        <div class="big-heart">
+            🥺
+        </div>
 
-<h2>
-Hi princess
-</h2>
+        <h2>
+            Will you forgive me?
+        </h2>
 
-<div class="personal-message">
+        <p>
+            Please? ❤️
+        </p>
+
+
+        <div class="choice-area"
+             id="choiceArea">
+
+            <button
+                id="yesButton"
+                class="button"
+                onclick="sayYes()">
+
+                YES ❤️
+
+            </button>
+
+
+            <button
+                id="noButton"
+                class="button"
+                onclick="moveNoButton()">
+
+                NO 😭
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCREEN 6 — PERSONAL MESSAGE
+========================================= -->
+
+<section id="screen6" class="screen">
+
+    <div class="content">
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+        <h2>
+            Hi princess
+        </h2>
+
+        <div class="personal-message">
 
 I'm sorry my love I know we r not in good terms and ik I messed up
 
@@ -710,109 +783,116 @@ I'm so proud of you my love seeing u work so much and still have tht motivation
 
 Can't think of anyone else who is so responsible and u make me feel inspired
 
-</div>
-
-<button
-class="button"
-onclick="playVideo2()">
-
-One more thing ❤️
-
-</button>
-
-</div>
-
-</section>
+        </div>
 
 
+        <button
+            class="button"
+            onclick="openVideo2()">
 
-<!-- ==================================
-     SCREEN 7
-     VIDEO 2
-================================== -->
+            One more thing ❤️
 
-<section
-id="screen7"
-class="screen">
+        </button>
 
-<div class="content">
-
-<h2>
-Something else for you ❤️
-</h2>
-
-<div class="video-container">
-
-<video
-id="video2"
-controls
-playsinline
-preload="metadata">
-
-<source
-src="video2.mp4"
-type="video/mp4">
-
-</video>
-
-</div>
-
-<button
-class="button"
-onclick="playVideo3()">
-
-And one last thing... 🥺
-
-</button>
-
-</div>
+    </div>
 
 </section>
 
 
 
-<!-- ==================================
-     SCREEN 8
-     VIDEO 3
-================================== -->
+<!-- =========================================
+     SCREEN 7 — VIDEO 2
+========================================= -->
 
-<section
-id="screen8"
-class="screen">
+<section id="screen7" class="screen">
 
-<div class="content">
+    <div class="content">
 
-<h2>
-One last thing ❤️
-</h2>
+        <h2>
+            Something else for you ❤️
+        </h2>
 
-<div class="video-container">
+        <div class="video-wrapper">
 
-<video
-id="video3"
-controls
-playsinline
-preload="metadata">
+            <video
+                id="video2"
+                controls
+                playsinline
+                preload="metadata">
 
-<source
-src="video3.mp4"
-type="video/mp4">
+                <source
+                    src="video2.mp4"
+                    type="video/mp4">
 
-</video>
+                Your browser does not support
+                video playback.
 
-</div>
+            </video>
 
-<div class="final-message">
+            <div class="video-label">
+                ❤️ Just one more
+            </div>
 
-I really am sorry ❤️
+        </div>
 
-<br>
 
-I love you my princess ❤️
+        <button
+            class="button"
+            onclick="openVideo3()">
 
-</div>
+            And one last thing... 🥺
 
-</div>
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SCREEN 8 — VIDEO 3
+========================================= -->
+
+<section id="screen8" class="screen">
+
+    <div class="content">
+
+        <h2>
+            One last thing ❤️
+        </h2>
+
+        <div class="video-wrapper">
+
+            <video
+                id="video3"
+                controls
+                playsinline
+                preload="metadata">
+
+                <source
+                    src="video3.mp4"
+                    type="video/mp4">
+
+                Your browser does not support
+                video playback.
+
+            </video>
+
+        </div>
+
+
+        <div class="final-message">
+
+            I really am sorry ❤️
+
+            <br>
+
+            I love you my princess ❤️
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -820,15 +900,15 @@ I love you my princess ❤️
 
 <script>
 
-
-/* ==================================
-   SCREEN SYSTEM
-================================== */
+/* =========================================
+   SCREEN MANAGEMENT
+========================================= */
 
 function showScreen(number) {
 
     const screens =
         document.querySelectorAll(".screen");
+
 
     screens.forEach(function(screen) {
 
@@ -837,26 +917,47 @@ function showScreen(number) {
     });
 
 
-    const selected =
+    const target =
         document.getElementById(
             "screen" + number
         );
 
-    selected.classList.add("active");
 
+    if (target) {
 
-    if (number === 2) {
+        target.classList.add("active");
 
-        startTyping();
+        target.scrollTop = 0;
 
     }
+
+
+    /*
+       Stop every video whenever
+       we leave a video screen.
+    */
+
+    document
+        .querySelectorAll("video")
+        .forEach(function(video) {
+
+            if (
+                !target ||
+                !target.contains(video)
+            ) {
+
+                video.pause();
+
+            }
+
+        });
 
 }
 
 
-/* ==================================
-   FIRST APOLOGY TYPING
-================================== */
+/* =========================================
+   TYPING ANIMATION
+========================================= */
 
 const firstMessage =
 "I know I made a mistake and I know saying sorry cannot magically fix everything... but I really want you to know that I am genuinely sorry. I never wanted to hurt you.";
@@ -877,7 +978,7 @@ function startTyping() {
     typingStarted = true;
 
 
-    const textElement =
+    const text =
         document.getElementById(
             "typingText"
         );
@@ -892,24 +993,22 @@ function startTyping() {
     let index = 0;
 
 
-    function typeCharacter() {
+    function typeNext() {
 
         if (index < firstMessage.length) {
 
-            textElement.textContent +=
+            text.textContent +=
                 firstMessage.charAt(index);
 
             index++;
 
 
             setTimeout(
-                typeCharacter,
-                35
+                typeNext,
+                32
             );
 
-        }
-
-        else {
+        } else {
 
             button.style.display =
                 "inline-block";
@@ -919,49 +1018,114 @@ function startTyping() {
     }
 
 
-    typeCharacter();
+    typeNext();
 
 }
 
 
-/* ==================================
+/* =========================================
    VIDEO 1
-================================== */
+========================================= */
 
-function playVideo1() {
+function openVideo1() {
 
     showScreen(4);
+
 
     const video =
         document.getElementById(
             "video1"
         );
 
+
+    video.currentTime = 0;
+
+
+    /*
+       Start automatically because
+       the user just tapped a button.
+    */
+
     video.play().catch(function() {
 
-        console.log(
-            "Video playback requires a tap"
-        );
+        /*
+           If browser blocks it,
+           video controls remain available.
+        */
 
     });
 
 }
 
 
-/* ==================================
+/* =========================================
+   GO TO YES / NO QUESTION
+========================================= */
+
+function goToQuestion() {
+
+    const video =
+        document.getElementById(
+            "video1"
+        );
+
+
+    video.pause();
+
+
+    /*
+       Reset NO button to its
+       original position every time.
+    */
+
+    resetNoButton();
+
+
+    showScreen(5);
+
+}
+
+
+/* =========================================
    YES BUTTON
-================================== */
+========================================= */
 
 function sayYes() {
+
+    resetNoButton();
 
     showScreen(6);
 
 }
 
 
-/* ==================================
+/* =========================================
+   RESET NO BUTTON
+========================================= */
+
+function resetNoButton() {
+
+    const button =
+        document.getElementById(
+            "noButton"
+        );
+
+
+    button.style.left =
+        "50%";
+
+    button.style.top =
+        "50%";
+
+    button.style.transform =
+        "translate(10%, -50%)";
+
+}
+
+
+/* =========================================
    PLAYFUL NO BUTTON
-================================== */
+========================================= */
 
 function moveNoButton() {
 
@@ -972,92 +1136,118 @@ function moveNoButton() {
 
 
     const area =
-        document.querySelector(
-            ".choice-area"
+        document.getElementById(
+            "choiceArea"
         );
 
 
-    const areaRect =
-        area.getBoundingClientRect();
-
-
-    const buttonRect =
-        button.getBoundingClientRect();
-
-
     /*
-       Current position relative
-       to the choice area
+       Get the dimensions of
+       the safe play area.
     */
 
-    let currentX =
-        button.offsetLeft;
+    const areaWidth =
+        area.clientWidth;
 
-    let currentY =
-        button.offsetTop;
+    const areaHeight =
+        area.clientHeight;
 
-
-    /*
-       Small random movement
-
-       It won't suddenly jump
-       across the whole screen.
-    */
-
-    const movement = 70;
-
-
-    let newX =
-        currentX +
-        (Math.random() * movement * 2)
-        - movement;
-
-
-    let newY =
-        currentY +
-        (Math.random() * movement * 2)
-        - movement;
-
-
-    /*
-       Keep the button inside
-       the choice area
-    */
-
-    const maxX =
-        area.clientWidth -
+    const buttonWidth =
         button.offsetWidth;
 
-    const maxY =
-        area.clientHeight -
+    const buttonHeight =
         button.offsetHeight;
 
 
-    newX =
+    /*
+       Keep a safe margin.
+    */
+
+    const margin = 8;
+
+
+    /*
+       Small movement range.
+
+       It won't fly across
+       the whole screen.
+    */
+
+    const rangeX = 80;
+
+    const rangeY = 55;
+
+
+    /*
+       Generate a random position
+       around the middle.
+    */
+
+    let x =
+        (areaWidth / 2)
+        - (buttonWidth / 2)
+        + (Math.random() * rangeX * 2)
+        - rangeX;
+
+
+    let y =
+        (areaHeight / 2)
+        - (buttonHeight / 2)
+        + (Math.random() * rangeY * 2)
+        - rangeY;
+
+
+    /*
+       Absolute boundaries.
+    */
+
+    const minX =
+        margin;
+
+    const maxX =
+        areaWidth -
+        buttonWidth -
+        margin;
+
+
+    const minY =
+        margin;
+
+    const maxY =
+        areaHeight -
+        buttonHeight -
+        margin;
+
+
+    /*
+       Keep button inside area.
+    */
+
+    x =
         Math.max(
-            5,
+            minX,
             Math.min(
-                newX,
-                maxX - 5
+                x,
+                maxX
             )
         );
 
 
-    newY =
+    y =
         Math.max(
-            5,
+            minY,
             Math.min(
-                newY,
-                maxY - 5
+                y,
+                maxY
             )
         );
 
 
     button.style.left =
-        newX + "px";
+        x + "px";
 
     button.style.top =
-        newY + "px";
+        y + "px";
 
     button.style.transform =
         "none";
@@ -1065,11 +1255,11 @@ function moveNoButton() {
 }
 
 
-/* ==================================
+/* =========================================
    VIDEO 2
-================================== */
+========================================= */
 
-function playVideo2() {
+function openVideo2() {
 
     showScreen(7);
 
@@ -1080,22 +1270,26 @@ function playVideo2() {
         );
 
 
+    video.currentTime = 0;
+
+
     video.play().catch(function() {
 
-        console.log(
-            "Video playback requires a tap"
-        );
+        /*
+           User can press play
+           if browser blocks autoplay.
+        */
 
     });
 
 }
 
 
-/* ==================================
+/* =========================================
    VIDEO 3
-================================== */
+========================================= */
 
-function playVideo3() {
+function openVideo3() {
 
     showScreen(8);
 
@@ -1106,20 +1300,24 @@ function playVideo3() {
         );
 
 
+    video.currentTime = 0;
+
+
     video.play().catch(function() {
 
-        console.log(
-            "Video playback requires a tap"
-        );
+        /*
+           User can press play
+           if browser blocks autoplay.
+        */
 
     });
 
 }
 
 
-/* ==================================
+/* =========================================
    FLOATING HEARTS
-================================== */
+========================================= */
 
 function createHeart() {
 
@@ -1133,7 +1331,7 @@ function createHeart() {
         "floating-heart";
 
 
-    const hearts = [
+    const heartTypes = [
 
         "❤️",
         "💕",
@@ -1146,29 +1344,31 @@ function createHeart() {
 
 
     heart.textContent =
-        hearts[
+        heartTypes[
             Math.floor(
-                Math.random() *
-                hearts.length
+                Math.random()
+                * heartTypes.length
             )
         ];
 
 
     heart.style.left =
-        Math.random() * 100 +
-        "vw";
+        Math.random() * 100
+        + "vw";
 
 
     heart.style.fontSize =
-        (16 +
-        Math.random() * 20) +
-        "px";
+        (
+            16 +
+            Math.random() * 18
+        ) + "px";
 
 
     heart.style.animationDuration =
-        (4 +
-        Math.random() * 4) +
-        "s";
+        (
+            4 +
+            Math.random() * 4
+        ) + "s";
 
 
     document.body.appendChild(
@@ -1176,23 +1376,27 @@ function createHeart() {
     );
 
 
-    setTimeout(function() {
+    setTimeout(
+        function() {
 
-        heart.remove();
+            heart.remove();
 
-    }, 8000);
+        },
+        8000
+    );
 
 }
 
 
+/*
+   Create hearts every 900ms.
+*/
+
 setInterval(
     createHeart,
-    700
+    900
 );
 
 
-</script>
-
-</body>
-
-</html>
+/* =========================================
+   START
